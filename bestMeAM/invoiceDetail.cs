@@ -16,6 +16,7 @@ namespace bestMeAM
     {
         public int code { get; set; }
         public int invoiceNo { get; set; }
+        public int Sr_No { get; set; }
         public string comodity { get; set; }
         public string containerNo { get; set; }
         public decimal quantity { get; set; }

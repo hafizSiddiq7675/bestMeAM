@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="bestMeAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="bestMeAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChartOfAccounts">
           <Key>
             <PropertyRef Name="code" />
@@ -37,6 +37,7 @@
           </Key>
           <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="invoiceNo" Type="int" Nullable="false" />
+          <Property Name="Sr_No" Type="int" Nullable="false" />
           <Property Name="comodity" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="containerNo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="quantity" Type="decimal" Precision="18" Scale="0" Nullable="false" />
@@ -75,8 +76,7 @@
             <End Role="invoiceDetails" EntitySet="invoiceDetails" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="bestMeAMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -106,19 +106,30 @@
           <Property Name="creditLimit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="chartOfAccCode" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityContainer Name="bestMeAMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccount" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="invoiceDetails" EntityType="bestMeAMModel.invoiceDetail" />
+          <EntitySet Name="invoiceMasters" EntityType="bestMeAMModel.invoiceMaster" />
+          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="bestMeAMModel.FK_invoiceDetails_invoiceMaster">
+            <End Role="invoiceMaster" EntitySet="invoiceMasters" />
+            <End Role="invoiceDetail" EntitySet="invoiceDetails" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="invoiceDetail">
           <Key>
             <PropertyRef Name="code" />
           </Key>
           <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="invoiceNo" Type="Int32" Nullable="false" />
-          <Property Name="comodity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="containerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="quantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="weight_Ton___" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="rate_Ton___" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <NavigationProperty Name="invoiceMaster" Relationship="Self.FK_invoiceDetails_invoiceMaster" FromRole="invoiceDetails" ToRole="invoiceMaster" />
+          <Property Name="Sr_No" Type="Int32" Nullable="false" />
+          <Property Name="comodity" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="containerNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="weight_Ton___" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="rate_Ton___" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="amount" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="invoiceMaster" Relationship="bestMeAMModel.FK_invoiceDetails_invoiceMaster" FromRole="invoiceDetail" ToRole="invoiceMaster" />
         </EntityType>
         <EntityType Name="invoiceMaster">
           <Key>
@@ -127,31 +138,21 @@
           <Property Name="invoiceNo" Type="Int32" Nullable="false" />
           <Property Name="invoiceDate" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="companyCode" Type="Int32" Nullable="false" />
-          <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="invoiceDetails" Relationship="Self.FK_invoiceDetails_invoiceMaster" FromRole="invoiceMaster" ToRole="invoiceDetails" />
+          <Property Name="companyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="invoiceDetails" Relationship="bestMeAMModel.FK_invoiceDetails_invoiceMaster" FromRole="invoiceMaster" ToRole="invoiceDetail" />
         </EntityType>
         <Association Name="FK_invoiceDetails_invoiceMaster">
-          <End Role="invoiceMaster" Type="Self.invoiceMaster" Multiplicity="1" />
-          <End Role="invoiceDetails" Type="Self.invoiceDetail" Multiplicity="*" />
+          <End Type="bestMeAMModel.invoiceMaster" Role="invoiceMaster" Multiplicity="1" />
+          <End Type="bestMeAMModel.invoiceDetail" Role="invoiceDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="invoiceMaster">
               <PropertyRef Name="invoiceNo" />
             </Principal>
-            <Dependent Role="invoiceDetails">
+            <Dependent Role="invoiceDetail">
               <PropertyRef Name="invoiceNo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="bestMeAMEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccount" />
-          <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="invoiceDetails" EntityType="Self.invoiceDetail" />
-          <EntitySet Name="invoiceMasters" EntityType="Self.invoiceMaster" />
-          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="Self.FK_invoiceDetails_invoiceMaster">
-            <End Role="invoiceMaster" EntitySet="invoiceMasters" />
-            <End Role="invoiceDetails" EntitySet="invoiceDetails" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -189,24 +190,25 @@
           <EntitySetMapping Name="invoiceDetails">
             <EntityTypeMapping TypeName="bestMeAMModel.invoiceDetail">
               <MappingFragment StoreEntitySet="invoiceDetails">
-                <ScalarProperty Name="code" ColumnName="code" />
-                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
-                <ScalarProperty Name="comodity" ColumnName="comodity" />
-                <ScalarProperty Name="containerNo" ColumnName="containerNo" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="weight_Ton___" ColumnName="weight/Ton($)" />
-                <ScalarProperty Name="rate_Ton___" ColumnName="rate/Ton($)" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="rate_Ton___" ColumnName="rate/Ton($)" />
+                <ScalarProperty Name="weight_Ton___" ColumnName="weight/Ton($)" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="containerNo" ColumnName="containerNo" />
+                <ScalarProperty Name="comodity" ColumnName="comodity" />
+                <ScalarProperty Name="Sr_No" ColumnName="Sr_No" />
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+                <ScalarProperty Name="code" ColumnName="code" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="invoiceMasters">
             <EntityTypeMapping TypeName="bestMeAMModel.invoiceMaster">
               <MappingFragment StoreEntitySet="invoiceMaster">
-                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
-                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
-                <ScalarProperty Name="companyCode" ColumnName="companyCode" />
                 <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="companyCode" ColumnName="companyCode" />
+                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

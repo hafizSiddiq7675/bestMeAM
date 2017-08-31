@@ -43,11 +43,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtRate = new MetroFramework.Controls.MetroTextBox();
             this.txtWeight = new MetroFramework.Controls.MetroTextBox();
             this.txtQuantity = new MetroFramework.Controls.MetroTextBox();
+            this.txtSr = new MetroFramework.Controls.MetroTextBox();
             this.txtComodity = new MetroFramework.Controls.MetroTextBox();
             this.txtContainerNo = new MetroFramework.Controls.MetroTextBox();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
@@ -244,11 +246,13 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtRate);
             this.groupBox1.Controls.Add(this.txtWeight);
             this.groupBox1.Controls.Add(this.txtQuantity);
+            this.groupBox1.Controls.Add(this.txtSr);
             this.groupBox1.Controls.Add(this.txtComodity);
             this.groupBox1.Controls.Add(this.txtContainerNo);
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -256,7 +260,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(279, 423);
+            this.groupBox1.Size = new System.Drawing.Size(279, 472);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Particulars";
@@ -264,9 +268,9 @@
             // btnAdd
             // 
             this.btnAdd.FontSize = MetroFramework.MetroButtonSize.Medium;
-            this.btnAdd.Location = new System.Drawing.Point(104, 385);
+            this.btnAdd.Location = new System.Drawing.Point(90, 422);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(60, 25);
+            this.btnAdd.Size = new System.Drawing.Size(83, 35);
             this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseSelectable = true;
@@ -276,7 +280,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(25, 310);
+            this.label7.Location = new System.Drawing.Point(25, 348);
             this.label7.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 19);
@@ -287,7 +291,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 245);
+            this.label8.Location = new System.Drawing.Point(25, 285);
             this.label8.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 19);
@@ -298,18 +302,29 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(25, 182);
+            this.label6.Location = new System.Drawing.Point(25, 218);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 19);
             this.label6.TabIndex = 3;
             this.label6.Text = "Quantity";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 89);
+            this.label13.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(51, 19);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Sr NO";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(25, 47);
+            this.label5.Location = new System.Drawing.Point(25, 24);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 19);
@@ -320,7 +335,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(25, 117);
+            this.label9.Location = new System.Drawing.Point(25, 152);
             this.label9.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(92, 19);
@@ -344,7 +359,7 @@
             this.txtRate.CustomButton.Visible = false;
             this.txtRate.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtRate.Lines = new string[0];
-            this.txtRate.Location = new System.Drawing.Point(29, 334);
+            this.txtRate.Location = new System.Drawing.Point(29, 372);
             this.txtRate.Margin = new System.Windows.Forms.Padding(5);
             this.txtRate.MaxLength = 32767;
             this.txtRate.Name = "txtRate";
@@ -377,7 +392,7 @@
             this.txtWeight.CustomButton.Visible = false;
             this.txtWeight.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtWeight.Lines = new string[0];
-            this.txtWeight.Location = new System.Drawing.Point(29, 269);
+            this.txtWeight.Location = new System.Drawing.Point(29, 309);
             this.txtWeight.Margin = new System.Windows.Forms.Padding(5);
             this.txtWeight.MaxLength = 32767;
             this.txtWeight.Name = "txtWeight";
@@ -410,7 +425,7 @@
             this.txtQuantity.CustomButton.Visible = false;
             this.txtQuantity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtQuantity.Lines = new string[0];
-            this.txtQuantity.Location = new System.Drawing.Point(29, 206);
+            this.txtQuantity.Location = new System.Drawing.Point(29, 242);
             this.txtQuantity.Margin = new System.Windows.Forms.Padding(5);
             this.txtQuantity.MaxLength = 32767;
             this.txtQuantity.Name = "txtQuantity";
@@ -425,6 +440,39 @@
             this.txtQuantity.UseSelectable = true;
             this.txtQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtQuantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // txtSr
+            // 
+            // 
+            // 
+            // 
+            this.txtSr.CustomButton.Image = null;
+            this.txtSr.CustomButton.Location = new System.Drawing.Point(196, 1);
+            this.txtSr.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSr.CustomButton.Name = "";
+            this.txtSr.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.txtSr.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtSr.CustomButton.TabIndex = 1;
+            this.txtSr.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSr.CustomButton.UseSelectable = true;
+            this.txtSr.CustomButton.Visible = false;
+            this.txtSr.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtSr.Lines = new string[0];
+            this.txtSr.Location = new System.Drawing.Point(29, 113);
+            this.txtSr.Margin = new System.Windows.Forms.Padding(5);
+            this.txtSr.MaxLength = 32767;
+            this.txtSr.Name = "txtSr";
+            this.txtSr.PasswordChar = '\0';
+            this.txtSr.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSr.SelectedText = "";
+            this.txtSr.SelectionLength = 0;
+            this.txtSr.SelectionStart = 0;
+            this.txtSr.ShortcutsEnabled = true;
+            this.txtSr.Size = new System.Drawing.Size(220, 25);
+            this.txtSr.TabIndex = 1;
+            this.txtSr.UseSelectable = true;
+            this.txtSr.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSr.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // txtComodity
             // 
@@ -443,7 +491,7 @@
             this.txtComodity.CustomButton.Visible = false;
             this.txtComodity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtComodity.Lines = new string[0];
-            this.txtComodity.Location = new System.Drawing.Point(29, 71);
+            this.txtComodity.Location = new System.Drawing.Point(29, 48);
             this.txtComodity.Margin = new System.Windows.Forms.Padding(5);
             this.txtComodity.MaxLength = 32767;
             this.txtComodity.Name = "txtComodity";
@@ -476,7 +524,7 @@
             this.txtContainerNo.CustomButton.Visible = false;
             this.txtContainerNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtContainerNo.Lines = new string[0];
-            this.txtContainerNo.Location = new System.Drawing.Point(29, 141);
+            this.txtContainerNo.Location = new System.Drawing.Point(29, 176);
             this.txtContainerNo.Margin = new System.Windows.Forms.Padding(5);
             this.txtContainerNo.MaxLength = 32767;
             this.txtContainerNo.Name = "txtContainerNo";
@@ -659,7 +707,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1270, 687);
+            this.ClientSize = new System.Drawing.Size(1270, 720);
             this.Controls.Add(this.lblContainer);
             this.Controls.Add(this.lbTot);
             this.Controls.Add(this.label12);
@@ -728,5 +776,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label label13;
+        private MetroFramework.Controls.MetroTextBox txtSr;
     }
 }
