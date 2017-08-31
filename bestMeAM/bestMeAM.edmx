@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bestMeAMModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChartOfAccounts">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" Nullable="false" />
+          <Property Name="accountType" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="parentCode" Type="int" Nullable="false" />
+          <Property Name="isGroup" Type="bit" Nullable="false" />
+          <Property Name="openingDebit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="openingCredit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="isActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="contact" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="creditLimit" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="chartOfAccCode" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invoiceDetails">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="invoiceNo" Type="int" Nullable="false" />
+          <Property Name="comodity" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="containerNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="quantity" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="weight/Ton($)" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="rate/Ton($)" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invoiceMaster">
+          <Key>
+            <PropertyRef Name="invoiceNo" />
+          </Key>
+          <Property Name="invoiceNo" Type="int" Nullable="false" />
+          <Property Name="invoiceDate" Type="date" Nullable="false" />
+          <Property Name="companyCode" Type="int" Nullable="false" />
+          <Property Name="companyName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_invoiceDetails_invoiceMaster">
+          <End Role="invoiceMaster" Type="Self.invoiceMaster" Multiplicity="1" />
+          <End Role="invoiceDetails" Type="Self.invoiceDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoiceMaster">
+              <PropertyRef Name="invoiceNo" />
+            </Principal>
+            <Dependent Role="invoiceDetails">
+              <PropertyRef Name="invoiceNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bestMeAMModelStoreContainer">
+          <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoiceDetails" EntityType="Self.invoiceDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="invoiceMaster" EntityType="Self.invoiceMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="Self.FK_invoiceDetails_invoiceMaster">
+            <End Role="invoiceMaster" EntitySet="invoiceMaster" />
+            <End Role="invoiceDetails" EntitySet="invoiceDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bestMeAMModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChartOfAccount">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" />
+          <Property Name="accountType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="parentCode" Type="Int32" Nullable="false" />
+          <Property Name="isGroup" Type="Boolean" Nullable="false" />
+          <Property Name="openingDebit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="openingCredit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="isActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contact" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="creditLimit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="chartOfAccCode" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="invoiceDetail">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="invoiceNo" Type="Int32" Nullable="false" />
+          <Property Name="comodity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="containerNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="weight_Ton___" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="rate_Ton___" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <NavigationProperty Name="invoiceMaster" Relationship="Self.FK_invoiceDetails_invoiceMaster" FromRole="invoiceDetails" ToRole="invoiceMaster" />
+        </EntityType>
+        <EntityType Name="invoiceMaster">
+          <Key>
+            <PropertyRef Name="invoiceNo" />
+          </Key>
+          <Property Name="invoiceNo" Type="Int32" Nullable="false" />
+          <Property Name="invoiceDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="companyCode" Type="Int32" Nullable="false" />
+          <Property Name="companyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="invoiceDetails" Relationship="Self.FK_invoiceDetails_invoiceMaster" FromRole="invoiceMaster" ToRole="invoiceDetails" />
+        </EntityType>
+        <Association Name="FK_invoiceDetails_invoiceMaster">
+          <End Role="invoiceMaster" Type="Self.invoiceMaster" Multiplicity="1" />
+          <End Role="invoiceDetails" Type="Self.invoiceDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="invoiceMaster">
+              <PropertyRef Name="invoiceNo" />
+            </Principal>
+            <Dependent Role="invoiceDetails">
+              <PropertyRef Name="invoiceNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="bestMeAMEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccount" />
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="invoiceDetails" EntityType="Self.invoiceDetail" />
+          <EntitySet Name="invoiceMasters" EntityType="Self.invoiceMaster" />
+          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="Self.FK_invoiceDetails_invoiceMaster">
+            <End Role="invoiceMaster" EntitySet="invoiceMasters" />
+            <End Role="invoiceDetails" EntitySet="invoiceDetails" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bestMeAMModelStoreContainer" CdmEntityContainer="bestMeAMEntities">
+          <EntitySetMapping Name="ChartOfAccounts">
+            <EntityTypeMapping TypeName="bestMeAMModel.ChartOfAccount">
+              <MappingFragment StoreEntitySet="ChartOfAccounts">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="accountType" ColumnName="accountType" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="parentCode" ColumnName="parentCode" />
+                <ScalarProperty Name="isGroup" ColumnName="isGroup" />
+                <ScalarProperty Name="openingDebit" ColumnName="openingDebit" />
+                <ScalarProperty Name="openingCredit" ColumnName="openingCredit" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="bestMeAMModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="contact" ColumnName="contact" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="creditLimit" ColumnName="creditLimit" />
+                <ScalarProperty Name="chartOfAccCode" ColumnName="chartOfAccCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoiceDetails">
+            <EntityTypeMapping TypeName="bestMeAMModel.invoiceDetail">
+              <MappingFragment StoreEntitySet="invoiceDetails">
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+                <ScalarProperty Name="comodity" ColumnName="comodity" />
+                <ScalarProperty Name="containerNo" ColumnName="containerNo" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="weight_Ton___" ColumnName="weight/Ton($)" />
+                <ScalarProperty Name="rate_Ton___" ColumnName="rate/Ton($)" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoiceMasters">
+            <EntityTypeMapping TypeName="bestMeAMModel.invoiceMaster">
+              <MappingFragment StoreEntitySet="invoiceMaster">
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+                <ScalarProperty Name="companyCode" ColumnName="companyCode" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
