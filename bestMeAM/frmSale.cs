@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 namespace bestMeAM
@@ -8,6 +11,7 @@ namespace bestMeAM
         bestMeAMEntities db = new bestMeAMEntities();
         public frmSale()
         {
+
             InitializeComponent();
             onLoad();
         }
@@ -64,7 +68,6 @@ namespace bestMeAM
                 lblSearch.Text = "";
             }
             btnSave.Enabled = true;
-            btnPrint.Enabled = true;
         }
         private void dgvDetails_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -143,6 +146,45 @@ namespace bestMeAM
             lblContainer.Text = "";
             btnSave.Enabled = false;
             onLoad();
+            btnPrint.Enabled = true;
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            int ino = Convert.ToInt32(txtInvoiceNo.Text) - 1;
+            //var data = (from im in db.invoiceMasters
+            //            join id in db.invoiceDetails on im.invoiceNo equals id.invoiceNo
+            //            where im.invoiceNo == ino
+            //            select new
+            //            {
+            //                invoiceNo = im.invoiceNo,
+            //                invoiceDate = im.invoiceDate,
+            //                companyName = im.companyName,
+            //                Sr_No = id.Sr_No,
+            //                containerNo = id.containerNo,
+            //                q = id.quantity,
+            //                weight_Ton___ = id.weight_Ton___,
+            //                rate_Ton___ = id.rate_Ton___,
+            //                a = id.amount
+            //            }).ToList();
+            invoiceMaster im = db.invoiceMasters.SingleOrDefault(r => r.invoiceNo == ino);
+            List<invoiceDetail> InvoiceDetails = db.invoiceDetails.Where(r=>r.invoiceNo==ino).ToList();
+            Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
+            {
+                new Microsoft.Reporting.WinForms.ReportParameter("invoiceNo" , im.invoiceNo.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("invoiceDate", im.invoiceDate.ToString("MM/dd/yyyy")),
+                new Microsoft.Reporting.WinForms.ReportParameter("company", im.companyName.ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("comodity", (InvoiceDetails.Select(r=>r.comodity).Distinct().First().ToString())),
+                new Microsoft.Reporting.WinForms.ReportParameter("containers", (InvoiceDetails.ToList().Count()).ToString())
+            };
+            ReportDataSource rps = new ReportDataSource();
+            rps.Name = "InvoiceDetails";
+            rps.Value = InvoiceDetails.ToList();
+            frmInvoice i = new frmInvoice();
+            i.rpvInvoice.LocalReport.SetParameters(p);
+            i.rpvInvoice.LocalReport.DataSources.Add(rps);
+            i.rpvInvoice.RefreshReport();
+            i.Show();
+         }
     }
 }

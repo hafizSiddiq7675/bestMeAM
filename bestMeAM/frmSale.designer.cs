@@ -634,6 +634,7 @@
             this.btnPrint.TabIndex = 8;
             this.btnPrint.Text = "&Print Invoice";
             this.btnPrint.UseSelectable = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnDelete
             // 
