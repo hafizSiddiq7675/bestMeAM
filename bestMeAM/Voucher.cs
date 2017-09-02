@@ -12,19 +12,17 @@ namespace bestMeAM
     using System;
     using System.Collections.Generic;
     
-    public partial class invoiceMaster
+    public partial class Voucher
     {
-        public invoiceMaster()
+        public Voucher()
         {
-            this.invoiceDetails = new HashSet<invoiceDetail>();
+            this.VoucherDetails = new HashSet<VoucherDetail>();
         }
     
-        public int invoiceNo { get; set; }
-        public System.DateTime invoiceDate { get; set; }
-        public int companyCode { get; set; }
-        public string companyName { get; set; }
-        public int saleVoucherNo { get; set; }
+        public int voucherNo { get; set; }
+        public System.DateTime voucherDate { get; set; }
+        public string voucherType { get; set; }
     
-        public virtual ICollection<invoiceDetail> invoiceDetails { get; set; }
+        public virtual ICollection<VoucherDetail> VoucherDetails { get; set; }
     }
 }

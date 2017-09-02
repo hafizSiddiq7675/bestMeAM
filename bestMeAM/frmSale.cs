@@ -1,7 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 namespace bestMeAM
@@ -92,7 +91,7 @@ namespace bestMeAM
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int j = Convert.ToInt32(lblSearch.Text)-1;
+            int j = Convert.ToInt32(lblSearch.Text);
             dgvDetails.Rows.RemoveAt(j);
             dgvDetails.Refresh();
             decimal sum = 0;
@@ -111,6 +110,10 @@ namespace bestMeAM
             lblSearch.Text = "";
             btnAdd.Text = "&Add";
             btnDelete.Enabled = false;
+            if (!(dgvDetails.Rows.Count > 0))
+            {
+                btnSave.Enabled = false;
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -119,21 +122,22 @@ namespace bestMeAM
             im.invoiceNo = Convert.ToInt32(txtInvoiceNo.Text);
             im.invoiceDate = dtpInvoiceDate.Value;
             im.companyCode = Convert.ToInt32(cmbCompany.SelectedValue);
-            im.companyName = cmbCompany.Text + " " + txtAddress.Text;
-            MessageBox.Show("Salam " + im.companyName);
+            im.companyName = cmbCompany.Text + " ," + txtAddress.Text;
             db.invoiceMasters.Add(im);
             db.SaveChanges();
             for (int i = 0; i < dgvDetails.Rows.Count; i++)
             {
                 invoiceDetail id = new invoiceDetail();
-                id.amount = Convert.ToDecimal(dgvDetails.Rows[i].Cells["amount"].Value);
+                var max = db.invoiceDetails.OrderByDescending(r => r.code).FirstOrDefault();
+                id.code = max == null ? 1 : (max.code + 1);
+                id.amount___ = Convert.ToDecimal(dgvDetails.Rows[i].Cells["amount"].Value);
                 id.comodity = dgvDetails.Rows[i].Cells["comodity"].Value.ToString();
                 id.Sr_No = Convert.ToInt32(dgvDetails.Rows[i].Cells["srNo"].Value);
                 id.containerNo = dgvDetails.Rows[i].Cells["containerNo"].Value.ToString();
                 id.invoiceNo = Convert.ToInt32(txtInvoiceNo.Text);
                 id.quantity = Convert.ToDecimal(dgvDetails.Rows[i].Cells["quantity"].Value);
                 id.rate_Ton___ = Convert.ToDecimal(dgvDetails.Rows[i].Cells["rate"].Value);
-                id.weight_Ton___ = Convert.ToDecimal(dgvDetails.Rows[i].Cells["weight"].Value);
+                id.weight_Ton = Convert.ToDecimal(dgvDetails.Rows[i].Cells["weight"].Value);
                 db.invoiceDetails.Add(id);
                 db.SaveChanges();
             }
@@ -142,9 +146,11 @@ namespace bestMeAM
             txtAddress.Text = "";
             txtComodity.Text = "";
             txtContainerNo.Text = "";
+            txtSr.Text = "";
             lbTot.Text = "";
             lblContainer.Text = "";
             btnSave.Enabled = false;
+            btnDelete.Enabled = false;
             onLoad();
             btnPrint.Enabled = true;
         }
@@ -152,38 +158,24 @@ namespace bestMeAM
         private void btnPrint_Click(object sender, EventArgs e)
         {
             int ino = Convert.ToInt32(txtInvoiceNo.Text) - 1;
-            //var data = (from im in db.invoiceMasters
-            //            join id in db.invoiceDetails on im.invoiceNo equals id.invoiceNo
-            //            where im.invoiceNo == ino
-            //            select new
-            //            {
-            //                invoiceNo = im.invoiceNo,
-            //                invoiceDate = im.invoiceDate,
-            //                companyName = im.companyName,
-            //                Sr_No = id.Sr_No,
-            //                containerNo = id.containerNo,
-            //                q = id.quantity,
-            //                weight_Ton___ = id.weight_Ton___,
-            //                rate_Ton___ = id.rate_Ton___,
-            //                a = id.amount
-            //            }).ToList();
             invoiceMaster im = db.invoiceMasters.SingleOrDefault(r => r.invoiceNo == ino);
-            List<invoiceDetail> InvoiceDetails = db.invoiceDetails.Where(r=>r.invoiceNo==ino).ToList();
+            List<invoiceDetail> InvoiceDetails = db.invoiceDetails.Where(r => r.invoiceNo == ino).ToList();
+            int sum = Convert.ToInt32(InvoiceDetails.Select(r => r.amount___).Sum());
+            degitToWord dtw = new degitToWord();
+            string amount = dtw.convertNumber(sum) + " Dollars Only";
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("invoiceNo" , im.invoiceNo.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("invoiceDate", im.invoiceDate.ToString("MM/dd/yyyy")),
                 new Microsoft.Reporting.WinForms.ReportParameter("company", im.companyName.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("comodity", (InvoiceDetails.Select(r=>r.comodity).Distinct().First().ToString())),
-                new Microsoft.Reporting.WinForms.ReportParameter("containers", (InvoiceDetails.ToList().Count()).ToString())
+                new Microsoft.Reporting.WinForms.ReportParameter("containers", (InvoiceDetails.ToList().Count())+ "*40'".ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("amount", amount)
             };
-            ReportDataSource rps = new ReportDataSource();
-            rps.Name = "InvoiceDetails";
-            rps.Value = InvoiceDetails.ToList();
             frmInvoice i = new frmInvoice();
-            i.rpvInvoice.LocalReport.SetParameters(p);
+            ReportDataSource rps = new ReportDataSource("bestMeAM", InvoiceDetails.ToList());
             i.rpvInvoice.LocalReport.DataSources.Add(rps);
-            i.rpvInvoice.RefreshReport();
+            i.rpvInvoice.LocalReport.SetParameters(p);
             i.Show();
          }
     }

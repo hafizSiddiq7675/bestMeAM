@@ -53,13 +53,6 @@
             this.txtComodity = new MetroFramework.Controls.MetroTextBox();
             this.txtContainerNo = new MetroFramework.Controls.MetroTextBox();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.srNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comodity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.containerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
@@ -68,6 +61,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lblContainer = new System.Windows.Forms.Label();
             this.lblSearch = new System.Windows.Forms.Label();
+            this.srNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comodity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.containerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpMaster.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
@@ -271,7 +272,7 @@
             this.btnAdd.Location = new System.Drawing.Point(90, 422);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(83, 35);
-            this.btnAdd.TabIndex = 6;
+            this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseSelectable = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -370,7 +371,7 @@
             this.txtRate.SelectionStart = 0;
             this.txtRate.ShortcutsEnabled = true;
             this.txtRate.Size = new System.Drawing.Size(220, 25);
-            this.txtRate.TabIndex = 5;
+            this.txtRate.TabIndex = 6;
             this.txtRate.UseSelectable = true;
             this.txtRate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtRate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -403,7 +404,7 @@
             this.txtWeight.SelectionStart = 0;
             this.txtWeight.ShortcutsEnabled = true;
             this.txtWeight.Size = new System.Drawing.Size(220, 25);
-            this.txtWeight.TabIndex = 4;
+            this.txtWeight.TabIndex = 5;
             this.txtWeight.UseSelectable = true;
             this.txtWeight.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtWeight.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -436,7 +437,7 @@
             this.txtQuantity.SelectionStart = 0;
             this.txtQuantity.ShortcutsEnabled = true;
             this.txtQuantity.Size = new System.Drawing.Size(220, 25);
-            this.txtQuantity.TabIndex = 3;
+            this.txtQuantity.TabIndex = 4;
             this.txtQuantity.UseSelectable = true;
             this.txtQuantity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtQuantity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -469,7 +470,7 @@
             this.txtSr.SelectionStart = 0;
             this.txtSr.ShortcutsEnabled = true;
             this.txtSr.Size = new System.Drawing.Size(220, 25);
-            this.txtSr.TabIndex = 1;
+            this.txtSr.TabIndex = 2;
             this.txtSr.UseSelectable = true;
             this.txtSr.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSr.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -535,7 +536,7 @@
             this.txtContainerNo.SelectionStart = 0;
             this.txtContainerNo.ShortcutsEnabled = true;
             this.txtContainerNo.Size = new System.Drawing.Size(220, 25);
-            this.txtContainerNo.TabIndex = 2;
+            this.txtContainerNo.TabIndex = 3;
             this.txtContainerNo.UseSelectable = true;
             this.txtContainerNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtContainerNo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -554,7 +555,8 @@
             this.quantity,
             this.weight,
             this.rate,
-            this.amount});
+            this.amount,
+            this.code});
             this.dgvDetails.Location = new System.Drawing.Point(325, 245);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
@@ -564,54 +566,6 @@
             this.dgvDetails.TabStop = false;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             // 
-            // srNo
-            // 
-            this.srNo.HeaderText = "Sr No";
-            this.srNo.Name = "srNo";
-            this.srNo.ReadOnly = true;
-            // 
-            // comodity
-            // 
-            this.comodity.DataPropertyName = "comodity";
-            this.comodity.HeaderText = "Comodity";
-            this.comodity.Name = "comodity";
-            this.comodity.ReadOnly = true;
-            // 
-            // containerNo
-            // 
-            this.containerNo.DataPropertyName = "containerNo";
-            this.containerNo.HeaderText = "Container No";
-            this.containerNo.Name = "containerNo";
-            this.containerNo.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // weight
-            // 
-            this.weight.DataPropertyName = "[weight/Ton($)]";
-            this.weight.HeaderText = "Weight/Ton ($)";
-            this.weight.Name = "weight";
-            this.weight.ReadOnly = true;
-            // 
-            // rate
-            // 
-            this.rate.DataPropertyName = "[rate/Ton($)]";
-            this.rate.HeaderText = "Rate/Ton ($)";
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.DataPropertyName = "amount";
-            this.amount.HeaderText = "Amount";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
             // btnSave
             // 
             this.btnSave.Enabled = false;
@@ -619,7 +573,7 @@
             this.btnSave.Location = new System.Drawing.Point(367, 615);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(93, 39);
-            this.btnSave.TabIndex = 7;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "&Save Invoice";
             this.btnSave.UseSelectable = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -631,7 +585,7 @@
             this.btnPrint.Location = new System.Drawing.Point(486, 615);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(93, 39);
-            this.btnPrint.TabIndex = 8;
+            this.btnPrint.TabIndex = 9;
             this.btnPrint.Text = "&Print Invoice";
             this.btnPrint.UseSelectable = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
@@ -643,7 +597,7 @@
             this.btnDelete.Location = new System.Drawing.Point(595, 615);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(93, 39);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "&Delete";
             this.btnDelete.UseSelectable = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -704,6 +658,63 @@
             this.lblSearch.Size = new System.Drawing.Size(0, 19);
             this.lblSearch.TabIndex = 3;
             // 
+            // srNo
+            // 
+            this.srNo.DataPropertyName = "Sr_No";
+            this.srNo.HeaderText = "Sr No";
+            this.srNo.Name = "srNo";
+            this.srNo.ReadOnly = true;
+            // 
+            // comodity
+            // 
+            this.comodity.DataPropertyName = "comodity";
+            this.comodity.HeaderText = "Comodity";
+            this.comodity.Name = "comodity";
+            this.comodity.ReadOnly = true;
+            // 
+            // containerNo
+            // 
+            this.containerNo.DataPropertyName = "containerNo";
+            this.containerNo.HeaderText = "Container No";
+            this.containerNo.Name = "containerNo";
+            this.containerNo.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // weight
+            // 
+            this.weight.DataPropertyName = "weight_Ton";
+            this.weight.HeaderText = "Weight/Ton ";
+            this.weight.Name = "weight";
+            this.weight.ReadOnly = true;
+            // 
+            // rate
+            // 
+            this.rate.DataPropertyName = "rate_Ton___";
+            this.rate.HeaderText = "Rate/Ton ($)";
+            this.rate.Name = "rate";
+            this.rate.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "amount___";
+            this.amount.HeaderText = "Amount ($)";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Visible = false;
+            // 
             // frmSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -741,9 +752,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpMaster;
-        private MetroFramework.Controls.MetroTextBox txtInvoiceNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbCompany;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private MetroFramework.Controls.MetroTextBox txtAddress;
@@ -757,11 +766,9 @@
         private MetroFramework.Controls.MetroTextBox txtQuantity;
         private MetroFramework.Controls.MetroTextBox txtContainerNo;
         private MetroFramework.Controls.MetroButton btnAdd;
-        private System.Windows.Forms.DataGridView dgvDetails;
         private MetroFramework.Controls.MetroButton btnSave;
         private MetroFramework.Controls.MetroButton btnPrint;
         private MetroFramework.Controls.MetroButton btnDelete;
-        private System.Windows.Forms.DateTimePicker dtpInvoiceDate;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
         private MetroFramework.Controls.MetroTextBox txtComodity;
@@ -769,6 +776,13 @@
         private System.Windows.Forms.Label lbTot;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblContainer;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.Label label13;
+        private MetroFramework.Controls.MetroTextBox txtSr;
+        public MetroFramework.Controls.MetroTextBox txtInvoiceNo;
+        public System.Windows.Forms.ComboBox cmbCompany;
+        public System.Windows.Forms.DataGridView dgvDetails;
+        public System.Windows.Forms.DateTimePicker dtpInvoiceDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn srNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn comodity;
         private System.Windows.Forms.DataGridViewTextBoxColumn containerNo;
@@ -776,8 +790,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn weight;
         private System.Windows.Forms.DataGridViewTextBoxColumn rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
-        private System.Windows.Forms.Label lblSearch;
-        private System.Windows.Forms.Label label13;
-        private MetroFramework.Controls.MetroTextBox txtSr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
     }
 }

@@ -85,12 +85,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>bestMeAM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="bestMeAMDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>bestMeAMDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ChartOfAccount.cs">
       <DependentUpon>bestMeAM.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
       <DependentUpon>bestMeAM.tt</DependentUpon>
     </Compile>
+    <Compile Include="degitToWord.cs" />
     <Compile Include="frmAllSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,12 @@
     <Compile Include="frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrintVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrintVoucher.Designer.cs">
+      <DependentUpon>frmPrintVoucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +171,12 @@
     <Compile Include="Test.Designer.cs">
       <DependentUpon>Test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Voucher.cs">
+      <DependentUpon>bestMeAM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VoucherDetail.cs">
+      <DependentUpon>bestMeAM.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAllSales.resx">
       <DependentUpon>frmAllSales.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +198,9 @@
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPrintVoucher.resx">
+      <DependentUpon>frmPrintVoucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSale.resx">
       <DependentUpon>frmSale.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,7 +217,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Voucher.rdlc" />
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,9 +238,21 @@
       <DependentUpon>bestMeAM.edmx</DependentUpon>
       <LastGenOutput>bestMeAM.cs</LastGenOutput>
     </None>
+    <None Include="bestMeAMDataSet.xsc">
+      <DependentUpon>bestMeAMDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="bestMeAMDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>bestMeAMDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="bestMeAMDataSet.xss">
+      <DependentUpon>bestMeAMDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\invoiceDetail.datasource" />
     <None Include="Properties\DataSources\invoiceMaster.datasource" />
+    <None Include="Properties\DataSources\VoucherDetail.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

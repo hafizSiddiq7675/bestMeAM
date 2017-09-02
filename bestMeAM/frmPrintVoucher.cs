@@ -1,5 +1,4 @@
-﻿using Microsoft.Reporting.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,17 +10,17 @@ using System.Windows.Forms;
 
 namespace bestMeAM
 {
-    public partial class frmInvoice : Form
+    public partial class frmPrintVoucher : Form
     {
-        bestMeAMEntities db = new bestMeAMEntities();
-        public frmInvoice()
+        public frmPrintVoucher()
         {
             InitializeComponent();
         }
 
-        private void frmInvoice_Load(object sender, EventArgs e)
+        private void frmPrintVoucher_Load(object sender, EventArgs e)
         {
-            this.rpvInvoice.RefreshReport();
+
+            this.rpvVoucher.RefreshReport();
         }
     }
 }

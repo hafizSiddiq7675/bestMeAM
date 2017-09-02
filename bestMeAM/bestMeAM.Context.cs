@@ -29,5 +29,7 @@ namespace bestMeAM
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<invoiceDetail> invoiceDetails { get; set; }
         public virtual DbSet<invoiceMaster> invoiceMasters { get; set; }
+        public virtual DbSet<Voucher> Vouchers { get; set; }
+        public virtual DbSet<VoucherDetail> VoucherDetails { get; set; }
     }
 }

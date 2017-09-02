@@ -20,9 +20,9 @@ namespace bestMeAM
         public string comodity { get; set; }
         public string containerNo { get; set; }
         public decimal quantity { get; set; }
-        public decimal weight_Ton___ { get; set; }
+        public decimal weight_Ton { get; set; }
         public decimal rate_Ton___ { get; set; }
-        public decimal amount { get; set; }
+        public decimal amount___ { get; set; }
     
         public virtual invoiceMaster invoiceMaster { get; set; }
     }
