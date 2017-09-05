@@ -43,20 +43,21 @@
             this.txtDesc = new MetroFramework.Controls.MetroTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblSearch = new System.Windows.Forms.Label();
             this.txtAmt = new MetroFramework.Controls.MetroTextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
             this.btnPrint = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.lblDr = new System.Windows.Forms.Label();
             this.lblCr = new System.Windows.Forms.Label();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.debit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpMaster.SuspendLayout();
             this.grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
@@ -101,6 +102,7 @@
             this.dtpVoucherDate.Size = new System.Drawing.Size(250, 26);
             this.dtpVoucherDate.TabIndex = 0;
             this.dtpVoucherDate.TabStop = false;
+            this.dtpVoucherDate.Value = new System.DateTime(2017, 9, 4, 0, 0, 0, 0);
             // 
             // cmbVtype
             // 
@@ -191,6 +193,7 @@
             this.grpDetails.Controls.Add(this.btnCr);
             this.grpDetails.Controls.Add(this.btnDr);
             this.grpDetails.Controls.Add(this.txtDesc);
+            this.grpDetails.Controls.Add(this.label4);
             this.grpDetails.Controls.Add(this.label6);
             this.grpDetails.Controls.Add(this.label13);
             this.grpDetails.Controls.Add(this.txtAmt);
@@ -289,16 +292,6 @@
             this.label13.TabIndex = 3;
             this.label13.Text = "Description";
             // 
-            // lblSearch
-            // 
-            this.lblSearch.AutoSize = true;
-            this.lblSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(333, 206);
-            this.lblSearch.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(0, 19);
-            this.lblSearch.TabIndex = 3;
-            // 
             // txtAmt
             // 
             // 
@@ -332,6 +325,16 @@
             this.txtAmt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAmt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(333, 206);
+            this.lblSearch.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(0, 19);
+            this.lblSearch.TabIndex = 3;
+            // 
             // dgvDetails
             // 
             this.dgvDetails.AllowUserToAddRows = false;
@@ -340,12 +343,12 @@
             this.dgvDetails.BackgroundColor = System.Drawing.Color.White;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.code,
             this.accountNo,
             this.accountName,
             this.Description,
             this.debit,
-            this.credit});
+            this.credit,
+            this.code});
             this.dgvDetails.Location = new System.Drawing.Point(337, 228);
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.ReadOnly = true;
@@ -413,14 +416,6 @@
             this.lblCr.Size = new System.Drawing.Size(0, 21);
             this.lblCr.TabIndex = 11;
             // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Visible = false;
-            // 
             // accountNo
             // 
             this.accountNo.DataPropertyName = "accountNo";
@@ -457,6 +452,25 @@
             this.credit.Name = "credit";
             this.credit.ReadOnly = true;
             // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 24);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Account";
+            // 
             // frmVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -492,12 +506,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox grpMaster;
-        private System.Windows.Forms.DateTimePicker dtpVoucherDate;
-        private System.Windows.Forms.ComboBox cmbVtype;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
-        private MetroFramework.Controls.MetroTextBox txtVoucherNo;
         private System.Windows.Forms.GroupBox grpDetails;
         private MetroFramework.Controls.MetroButton btnDr;
         private System.Windows.Forms.Label label6;
@@ -507,17 +518,21 @@
         private MetroFramework.Controls.MetroTextBox txtDesc;
         private System.Windows.Forms.ComboBox cmbAccount;
         private MetroFramework.Controls.MetroButton btnCr;
-        private System.Windows.Forms.DataGridView dgvDetails;
         private MetroFramework.Controls.MetroButton btnPrint;
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnSave;
         private System.Windows.Forms.Label lblDr;
         private System.Windows.Forms.Label lblCr;
-        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        public System.Windows.Forms.DateTimePicker dtpVoucherDate;
+        public System.Windows.Forms.ComboBox cmbVtype;
+        public MetroFramework.Controls.MetroTextBox txtVoucherNo;
+        public System.Windows.Forms.DataGridView dgvDetails;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn accountName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
         private System.Windows.Forms.DataGridViewTextBoxColumn debit;
         private System.Windows.Forms.DataGridViewTextBoxColumn credit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        private System.Windows.Forms.Label label4;
     }
 }

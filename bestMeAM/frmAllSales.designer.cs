@@ -34,12 +34,14 @@
             this.btnEdit = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.btnPrint = new MetroFramework.Controls.MetroButton();
+            this.lblFind = new System.Windows.Forms.Label();
+            this.lblvno = new System.Windows.Forms.Label();
             this.invoiceNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.saleVoucherNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblFind = new System.Windows.Forms.Label();
+            this.containers = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInvoices)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,7 +69,8 @@
             this.invoiceDate,
             this.companyCode,
             this.companyName,
-            this.saleVoucherNo});
+            this.saleVoucherNo,
+            this.containers});
             this.dgvInvoices.Location = new System.Drawing.Point(23, 105);
             this.dgvInvoices.Name = "dgvInvoices";
             this.dgvInvoices.ReadOnly = true;
@@ -148,6 +151,26 @@
             this.btnPrint.UseSelectable = true;
             this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
+            // lblFind
+            // 
+            this.lblFind.AutoSize = true;
+            this.lblFind.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFind.Location = new System.Drawing.Point(594, 78);
+            this.lblFind.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblFind.Name = "lblFind";
+            this.lblFind.Size = new System.Drawing.Size(0, 19);
+            this.lblFind.TabIndex = 17;
+            // 
+            // lblvno
+            // 
+            this.lblvno.AutoSize = true;
+            this.lblvno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblvno.Location = new System.Drawing.Point(577, 78);
+            this.lblvno.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblvno.Name = "lblvno";
+            this.lblvno.Size = new System.Drawing.Size(0, 19);
+            this.lblvno.TabIndex = 18;
+            // 
             // invoiceNo
             // 
             this.invoiceNo.DataPropertyName = "invoiceNo";
@@ -184,21 +207,19 @@
             this.saleVoucherNo.Name = "saleVoucherNo";
             this.saleVoucherNo.ReadOnly = true;
             // 
-            // lblFind
+            // containers
             // 
-            this.lblFind.AutoSize = true;
-            this.lblFind.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFind.Location = new System.Drawing.Point(594, 78);
-            this.lblFind.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblFind.Name = "lblFind";
-            this.lblFind.Size = new System.Drawing.Size(0, 19);
-            this.lblFind.TabIndex = 17;
+            this.containers.DataPropertyName = "containers";
+            this.containers.HeaderText = "Containers (Total)";
+            this.containers.Name = "containers";
+            this.containers.ReadOnly = true;
             // 
             // frmAllSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(911, 763);
+            this.Controls.Add(this.lblvno);
             this.Controls.Add(this.lblFind);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnPrint);
@@ -223,11 +244,13 @@
         private MetroFramework.Controls.MetroButton btnEdit;
         private MetroFramework.Controls.MetroButton btnDelete;
         private MetroFramework.Controls.MetroButton btnPrint;
+        private System.Windows.Forms.Label lblFind;
+        private System.Windows.Forms.Label lblvno;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoiceNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoiceDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyName;
         private System.Windows.Forms.DataGridViewTextBoxColumn saleVoucherNo;
-        private System.Windows.Forms.Label lblFind;
+        private System.Windows.Forms.DataGridViewTextBoxColumn containers;
     }
 }

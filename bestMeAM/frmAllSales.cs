@@ -1,12 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace bestMeAM
@@ -44,6 +39,7 @@ namespace bestMeAM
             if (dgv.CurrentRow.Selected)
             {
                 lblFind.Text = dgv.Rows[e.RowIndex].Cells["invoiceNo"].Value.ToString();
+                lblvno.Text = dgv.Rows[e.RowIndex].Cells["saleVoucherNo"].Value.ToString();
                 lblFind.Hide();
                 btnDelete.Enabled = true;
                 btnEdit.Enabled = true;
@@ -60,11 +56,16 @@ namespace bestMeAM
                 if (im != null)
                 {
                     var id = db.invoiceDetails.Where(r => r.invoiceNo == ino);
+                    int vno = Convert.ToInt32(lblvno.Text);
+                    var v = db.Vouchers.SingleOrDefault(r => r.voucherNo == vno);
+                    var vd = db.VoucherDetails.Where(r => r.voucherNo == v.voucherNo);
                     var confirm = MessageBox.Show("Are You Sure To Delete This Item ?? This Item and Its Details Will be Deleted ","Confirm Delete" ,MessageBoxButtons.YesNo);
                     if (confirm == DialogResult.Yes)
                     {
                         db.invoiceMasters.Remove(im);
                         db.invoiceDetails.RemoveRange(id);
+                        db.Vouchers.Remove(v);
+                        db.VoucherDetails.RemoveRange(vd);
                         db.SaveChanges();
                         btnDelete.Enabled = false;
                         btnEdit.Enabled = false;
@@ -90,6 +91,7 @@ namespace bestMeAM
                 new Microsoft.Reporting.WinForms.ReportParameter("company", im.companyName.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("comodity", (InvoiceDetails.Select(r=>r.comodity).Distinct().First().ToString())),
                 new Microsoft.Reporting.WinForms.ReportParameter("containers", (InvoiceDetails.ToList().Count())+ "*40'".ToString()),
+                new Microsoft.Reporting.WinForms.ReportParameter("voucherNo", im.saleVoucherNo.ToString()),
                 new Microsoft.Reporting.WinForms.ReportParameter("amount", amount)
             };
             frmInvoice i = new frmInvoice();
@@ -108,6 +110,7 @@ namespace bestMeAM
             s.dtpInvoiceDate.Value = im.invoiceDate;
             s.cmbCompany.Text = im.companyName.ToString();
             s.dgvDetails.AutoGenerateColumns = false;
+            s.lblBound.Text = lblvno.Text;
             s.dgvDetails.DataSource = db.invoiceDetails.Where(r => r.invoiceNo == ino).ToList();
             s.Show();
         }

@@ -28,12 +28,33 @@ namespace bestMeAM
             cmbAccount.DisplayMember = "name";
             txtAmt.Text = 0.ToString();
         }
-
         private void btnDr_Click(object sender, EventArgs e)
         {
             if (lblSearch.Text == "")
             {
-                dgvDetails.Rows.Add("Code", cmbAccount.SelectedValue, cmbAccount.Text, txtDesc.Text, txtAmt.Text, "0");
+                BindingList<VoucherDetail> vd = new BindingList<VoucherDetail>();
+                for (int i = 0; i < dgvDetails.Rows.Count; i++)
+                {
+                    vd.Add(new VoucherDetail
+                    {
+                        code = Convert.ToInt32(dgvDetails.Rows[i].Cells["code"].Value),
+                        accountNo = Convert.ToInt32(dgvDetails.Rows[i].Cells["accountNo"].Value),
+                        accountName = dgvDetails.Rows[i].Cells["accountName"].Value.ToString(),
+                        Description = dgvDetails.Rows[i].Cells["Description"].Value.ToString(),
+                        debit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["debit"].Value),
+                        credit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["credit"].Value)
+                    });
+                }
+                vd.Add(new VoucherDetail
+                {
+                    accountNo = Convert.ToInt32(cmbAccount.SelectedValue),
+                    accountName = cmbAccount.Text,
+                    Description = txtDesc.Text,
+                    debit = Convert.ToDecimal(txtAmt.Text),
+                    credit = 0
+                });
+                dgvDetails.AutoGenerateColumns = false;
+                dgvDetails.DataSource = vd;
                 decimal drtot = 0;
                 decimal crtot = 0;
                 for (int i = 0; i < dgvDetails.Rows.Count; i++)
@@ -47,7 +68,6 @@ namespace bestMeAM
             else
             {
                 int j = Convert.ToInt32(lblSearch.Text);
-                //dgvDetails.Rows[j].Cells["code"].Value = "Code";
                 dgvDetails.Rows[j].Cells["accountNo"].Value = cmbAccount.SelectedValue;
                 dgvDetails.Rows[j].Cells["accountName"].Value = cmbAccount.Text;
                 dgvDetails.Rows[j].Cells["Description"].Value = txtDesc.Text;
@@ -62,6 +82,7 @@ namespace bestMeAM
                 }
                 lblDr.Text = drtot.ToString();
                 lblCr.Text = crtot.ToString();
+                lblSearch.Text = "";
             }
             btnSave.Enabled = true; ;
         }
@@ -70,7 +91,29 @@ namespace bestMeAM
         {
             if (lblSearch.Text == "")
             {
-                dgvDetails.Rows.Add("Code", cmbAccount.SelectedValue, cmbAccount.Text, txtDesc.Text, "0",Convert.ToDecimal(txtAmt.Text));
+                BindingList<VoucherDetail> vd = new BindingList<VoucherDetail>();
+                for (int i = 0; i < dgvDetails.Rows.Count; i++)
+                {
+                    vd.Add(new VoucherDetail
+                    {
+                        code = Convert.ToInt32(dgvDetails.Rows[i].Cells["code"].Value),
+                        accountNo = Convert.ToInt32(dgvDetails.Rows[i].Cells["accountNo"].Value),
+                        accountName = dgvDetails.Rows[i].Cells["accountName"].Value.ToString(),
+                        Description = dgvDetails.Rows[i].Cells["Description"].Value.ToString(),
+                        debit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["debit"].Value),
+                        credit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["credit"].Value)
+                    });
+                }
+                vd.Add(new VoucherDetail
+                {
+                    accountNo = Convert.ToInt32(cmbAccount.SelectedValue),
+                    accountName = cmbAccount.Text,
+                    Description = txtDesc.Text,
+                    debit = 0,
+                    credit = Convert.ToDecimal(txtAmt.Text)
+                });
+                dgvDetails.AutoGenerateColumns = false;
+                dgvDetails.DataSource = vd;
                 decimal drtot = 0;
                 decimal crtot = 0;
                 for (int i = 0; i < dgvDetails.Rows.Count; i++)
@@ -84,7 +127,6 @@ namespace bestMeAM
             else
             {
                 int j = Convert.ToInt32(lblSearch.Text);
-                //dgvDetails.Rows[j].Cells["code"].Value = "Code";
                 dgvDetails.Rows[j].Cells["accountNo"].Value = cmbAccount.SelectedValue;
                 dgvDetails.Rows[j].Cells["accountName"].Value = cmbAccount.Text;
                 dgvDetails.Rows[j].Cells["Description"].Value = txtDesc.Text;
@@ -99,6 +141,7 @@ namespace bestMeAM
                 }
                 lblDr.Text = drtot.ToString();
                 lblCr.Text = crtot.ToString();
+                lblSearch.Text = "";
             }
             btnSave.Enabled = true;
         }
@@ -143,34 +186,77 @@ namespace bestMeAM
                 btnSave.Enabled = false;
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             Voucher v = new Voucher();
-            v.voucherNo = Convert.ToInt32(txtVoucherNo.Text);
-            v.voucherDate = dtpVoucherDate.Value;
-            v.voucherType = cmbVtype.Text;
-            db.Vouchers.Add(v);
-            db.SaveChanges();
-            for (int i = 0; i < dgvDetails.Rows.Count; i++)
+            v = db.Vouchers.Find(Convert.ToInt32(txtVoucherNo.Text));
+            if (v == null)
             {
-                VoucherDetail vd = new VoucherDetail();
-                var max = db.VoucherDetails.OrderByDescending(r => r.code).FirstOrDefault();
-                vd.code = max == null ? 1 : (max.code + 1);
-                vd.accountNo = Convert.ToInt32(dgvDetails.Rows[i].Cells["accountNo"].Value);
-                vd.accountName = dgvDetails.Rows[i].Cells["accountName"].Value.ToString();
-                vd.Description = dgvDetails.Rows[i].Cells["Description"].Value.ToString();
-                vd.debit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["debit"].Value);
-                vd.credit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["credit"].Value);
-                vd.voucherNo = v.voucherNo;
-                db.VoucherDetails.Add(vd);
+                Voucher vNEW = new Voucher();
+                vNEW.voucherNo = Convert.ToInt32(txtVoucherNo.Text);
+                vNEW.voucherDate = dtpVoucherDate.Value;
+                vNEW.voucherType = cmbVtype.Text;
+                db.Vouchers.Add(vNEW);
                 db.SaveChanges();
+                for (int i = 0; i < dgvDetails.Rows.Count; i++)
+                {
+                    VoucherDetail vd = new VoucherDetail();
+                    var max = db.VoucherDetails.OrderByDescending(r => r.code).FirstOrDefault();
+                    vd.code = max == null ? 1 : (max.code + 1);
+                    vd.accountNo = Convert.ToInt32(dgvDetails.Rows[i].Cells["accountNo"].Value);
+                    vd.accountName = dgvDetails.Rows[i].Cells["accountName"].Value.ToString();
+                    vd.Description = dgvDetails.Rows[i].Cells["Description"].Value.ToString();
+                    vd.debit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["debit"].Value);
+                    vd.credit = Convert.ToDecimal(dgvDetails.Rows[i].Cells["credit"].Value);
+                    vd.voucherNo = Convert.ToInt32(txtVoucherNo.Text);
+                    db.VoucherDetails.Add(vd);
+                    db.SaveChanges();
+                }
+                dgvDetails.DataSource = null;
+                btnPrint.Enabled = true;
             }
-            dgvDetails.Rows.Clear();
-            dgvDetails.Refresh();
+            else
+            {
+                int voucherNo = Convert.ToInt32(txtVoucherNo.Text);
+                var vDB = db.Vouchers.SingleOrDefault(r => r.voucherNo == voucherNo);
+                vDB.voucherNo = voucherNo;
+                vDB.voucherDate = dtpVoucherDate.Value;
+                vDB.voucherType = cmbVtype.Text;
+                for (int j = 0; j < dgvDetails.Rows.Count; j++)
+                {
+                    VoucherDetail voucherDetail = new VoucherDetail();
+                    voucherDetail = db.VoucherDetails.Find(Convert.ToInt32(dgvDetails.Rows[j].Cells["code"].Value));
+                    if (voucherDetail == null)
+                    {
+                        VoucherDetail vdNew = new VoucherDetail();
+                        var max = db.VoucherDetails.OrderByDescending(r => r.code).FirstOrDefault();
+                        vdNew.code = max == null ? 1 : (max.code + 1);
+                        vdNew.accountNo = Convert.ToInt32(dgvDetails.Rows[j].Cells["accountNo"].Value);
+                        vdNew.accountName = dgvDetails.Rows[j].Cells["accountName"].Value.ToString();
+                        vdNew.Description = dgvDetails.Rows[j].Cells["Description"].Value.ToString();
+                        vdNew.debit = Convert.ToDecimal(dgvDetails.Rows[j].Cells["debit"].Value);
+                        vdNew.credit = Convert.ToDecimal(dgvDetails.Rows[j].Cells["credit"].Value);
+                        vdNew.voucherNo = Convert.ToInt32(txtVoucherNo.Text);
+                        db.VoucherDetails.Add(vdNew);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        int code = Convert.ToInt32(dgvDetails.Rows[j].Cells["code"].Value);
+                        var vdDB = db.VoucherDetails.Single(r => r.code == code);
+                        vdDB.accountNo = Convert.ToInt32(dgvDetails.Rows[j].Cells["accountNo"].Value);
+                        vdDB.accountName = dgvDetails.Rows[j].Cells["accountName"].Value.ToString();
+                        vdDB.Description = dgvDetails.Rows[j].Cells["Description"].Value.ToString();
+                        vdDB.debit = Convert.ToDecimal(dgvDetails.Rows[j].Cells["debit"].Value);
+                        vdDB.credit = Convert.ToDecimal(dgvDetails.Rows[j].Cells["credit"].Value);
+                    }
+                }
+                db.SaveChanges();
+                dgvDetails.DataSource = null;
+            }
             txtDesc.Text = "";
             btnSave.Enabled = false;
-            btnPrint.Enabled = true;
+            btnDelete.Enabled = false;
             onLoad();
         }
 
@@ -182,7 +268,7 @@ namespace bestMeAM
             Microsoft.Reporting.WinForms.ReportParameter[] p = new Microsoft.Reporting.WinForms.ReportParameter[]
             {
                 new Microsoft.Reporting.WinForms.ReportParameter("voucherNo", v.voucherNo.ToString()),
-                new Microsoft.Reporting.WinForms.ReportParameter("voucherDate", v.voucherDate.ToString("MM/dd/yyyy")),
+                new Microsoft.Reporting.WinForms.ReportParameter("voucherDate", v.voucherDate.ToString("dd/MM/yyyy")),
                 new Microsoft.Reporting.WinForms.ReportParameter("voucherType", v.voucherType.ToString())
             };
             frmPrintVoucher pv = new frmPrintVoucher();

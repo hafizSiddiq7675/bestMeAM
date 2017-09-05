@@ -2,6 +2,55 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
+      <Textbox Name="Textbox7">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>L.F International</Value>
+                <Style>
+                  <FontFamily>Calibri</FontFamily>
+                  <FontSize>22pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Left>2.40719in</Left>
+        <Height>0.38195in</Height>
+        <Width>2.78125in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Top</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Image Name="Logo">
+        <Source>Embedded</Source>
+        <Value>LFNEW</Value>
+        <Sizing>FitProportional</Sizing>
+        <Left>0.14007in</Left>
+        <Height>1.3777in</Height>
+        <Width>1.48139in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
       <Textbox Name="Textbox4">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -29,9 +78,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
         <Top>0.05593in</Top>
-        <Left>5.52in</Left>
+        <Left>5.37993in</Left>
         <Height>0.23611in</Height>
         <Width>2.13542in</Width>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -69,10 +119,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
         <Top>0.31982in</Top>
-        <Left>5.52in</Left>
+        <Left>5.37993in</Left>
         <Height>0.25569in</Height>
         <Width>2.33333in</Width>
-        <ZIndex>1</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -83,20 +133,6 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Image Name="Logo">
-        <Source>Embedded</Source>
-        <Value>LFNEW</Value>
-        <Sizing>FitProportional</Sizing>
-        <Left>0.28014in</Left>
-        <Height>1.3777in</Height>
-        <Width>1.48139in</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-        </Style>
-      </Image>
       <Textbox Name="Textbox2">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -118,10 +154,10 @@
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
         <Top>0.3806in</Top>
-        <Left>2.53684in</Left>
+        <Left>2.39678in</Left>
         <Height>0.34028in</Height>
         <Width>2.78125in</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -153,53 +189,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
         <Top>0.71788in</Top>
-        <Left>1.88194in</Left>
+        <Left>1.74187in</Left>
         <Height>0.28694in</Height>
         <Width>4.21528in</Width>
-        <ZIndex>4</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox6">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Voucher # </Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>22pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-              <TextRun>
-                <Value>=Parameters!voucherNo.Value</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>22pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.48524in</Top>
-        <Left>2.45474in</Left>
-        <Height>0.4566in</Height>
-        <Width>3.64248in</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -211,200 +203,72 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="rate_Ton___2">
+      <Textbox Name="Textbox9">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Voucher Date:</Value>
+                <Value>Ledger Report for </Value>
                 <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>14pt</FontSize>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!account.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> from </Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!startDate.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value> To </Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Parameters!endDate.Value</Value>
+                <Style>
+                  <FontFamily>calibri</FontFamily>
+                  <FontSize>20pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>rate_Ton___</rd:DefaultName>
-        <Top>2.04081in</Top>
-        <Left>1.52641in</Left>
-        <Height>0.34895in</Height>
-        <Width>1.7025in</Width>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>1.61333in</Top>
+        <Left>1.74187in</Left>
+        <Height>0.75in</Height>
+        <Width>4.77083in</Width>
         <ZIndex>6</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox37">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!voucherDate.Value</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>14pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox37</rd:DefaultName>
-        <Top>2.04081in</Top>
-        <Left>3.22891in</Left>
-        <Height>0.34895in</Height>
-        <Width>3.84884in</Width>
-        <ZIndex>7</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="rate_Ton___3">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Voucher Type</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>14pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>rate_Ton___</rd:DefaultName>
-        <Top>2.38976in</Top>
-        <Left>1.52641in</Left>
-        <Height>0.37673in</Height>
-        <Width>1.7025in</Width>
-        <ZIndex>8</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox38">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!voucherType.Value</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>14pt</FontSize>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox37</rd:DefaultName>
-        <Top>2.39669in</Top>
-        <Left>3.22891in</Left>
-        <Height>0.36979in</Height>
-        <Width>3.84884in</Width>
-        <ZIndex>9</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox7">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>L.F International</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>22pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>2.54726in</Left>
-        <Height>0.38195in</Height>
-        <Width>2.78125in</Width>
-        <ZIndex>10</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <VerticalAlign>Top</VerticalAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="Textbox8">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Details</Value>
-                <Style>
-                  <FontFamily>Calibri</FontFamily>
-                  <FontSize>22pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style>
-              <TextAlign>Center</TextAlign>
-            </Style>
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>3.07812in</Top>
-        <Left>2.54726in</Left>
-        <Height>0.42709in</Height>
-        <Width>2.53857in</Width>
-        <ZIndex>11</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -419,35 +283,38 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.06875in</Width>
+              <Width>1.14166in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.86043in</Width>
+              <Width>1.36041in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.90607in</Width>
+              <Width>2.01088in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.06875in</Width>
+              <Width>1.14166in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.06875in</Width>
+              <Width>1.14166in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.14166in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.33854in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox15">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Account No</Value>
+                              <Value>Voucher Date</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -460,7 +327,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox15</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -476,14 +343,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox17">
+                    <Textbox Name="Textbox12">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Account Name</Value>
+                              <Value>Voucher No (REF)</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -496,7 +363,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox17</rd:DefaultName>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -512,7 +379,7 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox19">
+                    <Textbox Name="Textbox14">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -532,7 +399,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox19</rd:DefaultName>
+                      <rd:DefaultName>Textbox14</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -548,14 +415,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox21">
+                    <Textbox Name="Textbox16">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Debit</Value>
+                              <Value>Debit ($)</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -568,7 +435,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox21</rd:DefaultName>
+                      <rd:DefaultName>Textbox16</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -584,14 +451,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox18">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Credit</Value>
+                              <Value>Credit ($)</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
                                 <FontSize>12pt</FontSize>
@@ -604,7 +471,43 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <rd:DefaultName>Textbox18</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox20">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Balance ($)</Value>
+                              <Style>
+                                <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox20</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -621,20 +524,21 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.33854in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="accountNo">
+                    <Textbox Name="voucherDate">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!accountNo.Value</Value>
+                              <Value>=Fields!voucherDate.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -643,7 +547,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>accountNo</rd:DefaultName>
+                      <rd:DefaultName>voucherDate</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -659,16 +563,17 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="accountName">
+                    <Textbox Name="voucherNo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!accountName.Value</Value>
+                              <Value>=Fields!voucherNo.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -677,7 +582,7 @@
                           </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>accountName</rd:DefaultName>
+                      <rd:DefaultName>voucherNo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -703,6 +608,7 @@
                               <Value>=Fields!Description.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -737,6 +643,7 @@
                               <Value>=Fields!debit.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -771,6 +678,7 @@
                               <Value>=Fields!credit.Value</Value>
                               <Style>
                                 <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -780,6 +688,41 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>credit</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="balance">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!balance.Value</Value>
+                              <Style>
+                                <FontFamily>calibri</FontFamily>
+                                <FontSize>12pt</FontSize>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>balance</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -804,6 +747,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -816,26 +760,27 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>hafiz</DataSetName>
-        <Top>3.74875in</Top>
-        <Left>0.68266in</Left>
-        <Height>0.5in</Height>
-        <Width>6.97275in</Width>
-        <ZIndex>12</ZIndex>
+        <RepeatRowHeaders>true</RepeatRowHeaders>
+        <DataSetName>bestMeAM</DataSetName>
+        <Top>2.37722in</Top>
+        <Left>0.30255in</Left>
+        <Height>0.67708in</Height>
+        <Width>7.93792in</Width>
+        <ZIndex>7</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox25">
+      <Textbox Name="Textbox22">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!debit.Value, "hafiz")</Value>
+                <Value>=Sum(Fields!credit.Value, "bestMeAM")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -844,15 +789,15 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>4.24875in</Top>
-        <Left>5.51792in</Left>
-        <Height>0.25in</Height>
-        <Width>1.06875in</Width>
-        <ZIndex>13</ZIndex>
+        <rd:DefaultName>Textbox22</rd:DefaultName>
+        <Top>3.05431in</Top>
+        <Left>5.95715in</Left>
+        <Height>0.35417in</Height>
+        <Width>1.14166in</Width>
+        <ZIndex>8</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -860,14 +805,14 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox26">
+      <Textbox Name="Textbox23">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!credit.Value, "hafiz")</Value>
+                <Value>=Sum(Fields!balance.Value, "bestMeAM")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -876,15 +821,15 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox25</rd:DefaultName>
-        <Top>4.26264in</Top>
-        <Left>6.58667in</Left>
-        <Height>0.25in</Height>
-        <Width>1.06875in</Width>
-        <ZIndex>14</ZIndex>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>3.05431in</Top>
+        <Left>7.09881in</Left>
+        <Height>0.35417in</Height>
+        <Width>1.14166in</Width>
+        <ZIndex>9</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -892,19 +837,15 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
-      <Textbox Name="Textbox28">
+      <Textbox Name="Textbox24">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>TOTALS:</Value>
-                <Style>
-                  <FontFamily>calibri</FontFamily>
-                  <FontSize>12pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                </Style>
+                <Value>=Sum(Fields!debit.Value, "bestMeAM")</Value>
+                <Style />
               </TextRun>
             </TextRuns>
             <Style>
@@ -912,15 +853,15 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox28</rd:DefaultName>
-        <Top>4.24875in</Top>
-        <Left>3.61184in</Left>
-        <Height>0.25in</Height>
-        <Width>1.90607in</Width>
-        <ZIndex>15</ZIndex>
+        <rd:DefaultName>Textbox24</rd:DefaultName>
+        <Top>3.05431in</Top>
+        <Left>4.8155in</Left>
+        <Height>0.35417in</Height>
+        <Width>1.14166in</Width>
+        <ZIndex>10</ZIndex>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Style>Solid</Style>
           </Border>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -945,27 +886,19 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>c6286a42-a414-491e-87bb-03b5df501a81</rd:DataSourceID>
+      <rd:DataSourceID>83e89f7e-001a-4dc8-ade6-fb989ad6e887</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="hafiz">
+    <DataSet Name="bestMeAM">
       <Query>
         <DataSourceName>bestMeAM</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="accountName">
-          <DataField>accountName</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="accountNo">
-          <DataField>accountNo</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
-        </Field>
-        <Field Name="code">
-          <DataField>code</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+        <Field Name="balance">
+          <DataField>balance</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="credit">
           <DataField>credit</DataField>
@@ -979,9 +912,9 @@
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Voucher">
-          <DataField>Voucher</DataField>
-          <rd:TypeName>bestMeAM.Voucher</rd:TypeName>
+        <Field Name="voucherDate">
+          <DataField>voucherDate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="voucherNo">
           <DataField>voucherNo</DataField>
@@ -990,21 +923,21 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>bestMeAM</rd:DataSetName>
-        <rd:TableName>VoucherDetail</rd:TableName>
-        <rd:ObjectDataSourceType>bestMeAM.VoucherDetail, bestMeAM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ledger</rd:TableName>
+        <rd:ObjectDataSourceType>bestMeAM.ledger, bestMeAM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
   <ReportParameters>
-    <ReportParameter Name="voucherNo">
+    <ReportParameter Name="startDate">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="voucherDate">
+    <ReportParameter Name="endDate">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="voucherType">
+    <ReportParameter Name="account">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -1076,5 +1009,5 @@ a+ImPvY5Rt6LFOvz+QYPHoyvU8s3NW5EYX7Brh078YpwFOS1eoVFhbv3lJm3HJYUFzZxEx8vXFxcXGZu
   </EmbeddedImages>
   <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>69aea47c-8bf5-435f-9431-780d814deb20</rd:ReportID>
+  <rd:ReportID>ae8f2644-67cd-4fd5-b06e-8d2594023e01</rd:ReportID>
 </Report>

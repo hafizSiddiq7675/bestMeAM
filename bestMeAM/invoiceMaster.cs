@@ -24,6 +24,7 @@ namespace bestMeAM
         public int companyCode { get; set; }
         public string companyName { get; set; }
         public int saleVoucherNo { get; set; }
+        public string containers { get; set; }
     
         public virtual ICollection<invoiceDetail> invoiceDetails { get; set; }
     }

@@ -53,14 +53,6 @@
             this.txtComodity = new MetroFramework.Controls.MetroTextBox();
             this.txtContainerNo = new MetroFramework.Controls.MetroTextBox();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.btnSave = new MetroFramework.Controls.MetroButton();
-            this.btnPrint = new MetroFramework.Controls.MetroButton();
-            this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lbTot = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lblContainer = new System.Windows.Forms.Label();
-            this.lblSearch = new System.Windows.Forms.Label();
             this.srNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comodity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.containerNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +61,15 @@
             this.rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.btnPrint = new MetroFramework.Controls.MetroButton();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.lbTot = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblContainer = new System.Windows.Forms.Label();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.lblBound = new System.Windows.Forms.Label();
             this.grpMaster.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
@@ -566,6 +567,63 @@
             this.dgvDetails.TabStop = false;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             // 
+            // srNo
+            // 
+            this.srNo.DataPropertyName = "Sr_No";
+            this.srNo.HeaderText = "Sr No";
+            this.srNo.Name = "srNo";
+            this.srNo.ReadOnly = true;
+            // 
+            // comodity
+            // 
+            this.comodity.DataPropertyName = "comodity";
+            this.comodity.HeaderText = "Comodity";
+            this.comodity.Name = "comodity";
+            this.comodity.ReadOnly = true;
+            // 
+            // containerNo
+            // 
+            this.containerNo.DataPropertyName = "containerNo";
+            this.containerNo.HeaderText = "Container No";
+            this.containerNo.Name = "containerNo";
+            this.containerNo.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.DataPropertyName = "quantity";
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
+            // 
+            // weight
+            // 
+            this.weight.DataPropertyName = "weight_Ton";
+            this.weight.HeaderText = "Weight/Ton ";
+            this.weight.Name = "weight";
+            this.weight.ReadOnly = true;
+            // 
+            // rate
+            // 
+            this.rate.DataPropertyName = "rate_Ton___";
+            this.rate.HeaderText = "Rate/Ton ($)";
+            this.rate.Name = "rate";
+            this.rate.ReadOnly = true;
+            // 
+            // amount
+            // 
+            this.amount.DataPropertyName = "amount___";
+            this.amount.HeaderText = "Amount ($)";
+            this.amount.Name = "amount";
+            this.amount.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Visible = false;
+            // 
             // btnSave
             // 
             this.btnSave.Enabled = false;
@@ -658,62 +716,15 @@
             this.lblSearch.Size = new System.Drawing.Size(0, 19);
             this.lblSearch.TabIndex = 3;
             // 
-            // srNo
+            // lblBound
             // 
-            this.srNo.DataPropertyName = "Sr_No";
-            this.srNo.HeaderText = "Sr No";
-            this.srNo.Name = "srNo";
-            this.srNo.ReadOnly = true;
-            // 
-            // comodity
-            // 
-            this.comodity.DataPropertyName = "comodity";
-            this.comodity.HeaderText = "Comodity";
-            this.comodity.Name = "comodity";
-            this.comodity.ReadOnly = true;
-            // 
-            // containerNo
-            // 
-            this.containerNo.DataPropertyName = "containerNo";
-            this.containerNo.HeaderText = "Container No";
-            this.containerNo.Name = "containerNo";
-            this.containerNo.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.DataPropertyName = "quantity";
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
-            // weight
-            // 
-            this.weight.DataPropertyName = "weight_Ton";
-            this.weight.HeaderText = "Weight/Ton ";
-            this.weight.Name = "weight";
-            this.weight.ReadOnly = true;
-            // 
-            // rate
-            // 
-            this.rate.DataPropertyName = "rate_Ton___";
-            this.rate.HeaderText = "Rate/Ton ($)";
-            this.rate.Name = "rate";
-            this.rate.ReadOnly = true;
-            // 
-            // amount
-            // 
-            this.amount.DataPropertyName = "amount___";
-            this.amount.HeaderText = "Amount ($)";
-            this.amount.Name = "amount";
-            this.amount.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Visible = false;
+            this.lblBound.AutoSize = true;
+            this.lblBound.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBound.Location = new System.Drawing.Point(469, 223);
+            this.lblBound.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblBound.Name = "lblBound";
+            this.lblBound.Size = new System.Drawing.Size(0, 19);
+            this.lblBound.TabIndex = 3;
             // 
             // frmSale
             // 
@@ -725,6 +736,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.lblSearch);
+            this.Controls.Add(this.lblBound);
             this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -791,5 +803,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn amount;
         private System.Windows.Forms.DataGridViewTextBoxColumn code;
+        public System.Windows.Forms.Label lblBound;
     }
 }

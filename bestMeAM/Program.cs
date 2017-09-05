@@ -16,7 +16,7 @@ namespace bestMeAM
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAllSales());
+            Application.Run(new frmLogin());
         }
     }
 }

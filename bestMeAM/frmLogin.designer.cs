@@ -32,7 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtUname = new MetroFramework.Controls.MetroTextBox();
             this.txtPass = new MetroFramework.Controls.MetroTextBox();
-            this.mbtnLogin = new MetroFramework.Controls.MetroButton();
+            this.btnLogin = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,7 +100,7 @@
             this.txtPass.Location = new System.Drawing.Point(177, 101);
             this.txtPass.MaxLength = 32767;
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '\0';
+            this.txtPass.PasswordChar = '●';
             this.txtPass.PromptText = "Enter Your Password";
             this.txtPass.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtPass.SelectedText = "";
@@ -110,32 +110,34 @@
             this.txtPass.Size = new System.Drawing.Size(291, 25);
             this.txtPass.TabIndex = 1;
             this.txtPass.UseSelectable = true;
+            this.txtPass.UseSystemPasswordChar = true;
             this.txtPass.WaterMark = "Enter Your Password";
             this.txtPass.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPass.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             // 
-            // mbtnLogin
+            // btnLogin
             // 
-            this.mbtnLogin.BackColor = System.Drawing.Color.White;
-            this.mbtnLogin.Location = new System.Drawing.Point(388, 147);
-            this.mbtnLogin.Name = "mbtnLogin";
-            this.mbtnLogin.Size = new System.Drawing.Size(80, 23);
-            this.mbtnLogin.TabIndex = 2;
-            this.mbtnLogin.Text = "&Login";
-            this.mbtnLogin.UseSelectable = true;
-            this.mbtnLogin.Click += new System.EventHandler(this.mbtnLogin_Click);
+            this.btnLogin.BackColor = System.Drawing.Color.White;
+            this.btnLogin.Location = new System.Drawing.Point(388, 147);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(80, 23);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "&Login";
+            this.btnLogin.UseSelectable = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 196);
-            this.Controls.Add(this.mbtnLogin);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUname);
             this.Controls.Add(this.pictureBox1);
             this.Name = "frmLogin";
             this.Text = "Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -147,7 +149,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroTextBox txtUname;
         private MetroFramework.Controls.MetroTextBox txtPass;
-        private MetroFramework.Controls.MetroButton mbtnLogin;
+        private MetroFramework.Controls.MetroButton btnLogin;
     }
 }
 

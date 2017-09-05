@@ -54,6 +54,14 @@
           <Property Name="companyCode" Type="int" Nullable="false" />
           <Property Name="companyName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="saleVoucherNo" Type="int" Nullable="false" />
+          <Property Name="containers" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="userName" />
+          </Key>
+          <Property Name="userName" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="25" Nullable="false" />
         </EntityType>
         <EntityType Name="Voucher">
           <Key>
@@ -104,6 +112,7 @@
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="invoiceDetail" EntityType="Self.invoiceDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="invoiceMaster" EntityType="Self.invoiceMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Voucher" EntityType="Self.Voucher" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="VoucherDetail" EntityType="Self.VoucherDetail" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="Self.FK_invoiceDetails_invoiceMaster">
@@ -148,19 +157,54 @@
         <EntityContainer Name="bestMeAMEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChartOfAccounts" EntityType="Self.ChartOfAccount" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
-          <EntitySet Name="invoiceDetails" EntityType="bestMeAMModel.invoiceDetail" />
-          <EntitySet Name="invoiceMasters" EntityType="bestMeAMModel.invoiceMaster" />
           <EntitySet Name="Vouchers" EntityType="bestMeAMModel.Voucher" />
           <EntitySet Name="VoucherDetails" EntityType="bestMeAMModel.VoucherDetail" />
-          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="bestMeAMModel.FK_invoiceDetails_invoiceMaster">
-            <End Role="invoiceMaster" EntitySet="invoiceMasters" />
-            <End Role="invoiceDetail" EntitySet="invoiceDetails" />
-          </AssociationSet>
           <AssociationSet Name="FK_VoucherDetails_Voucher" Association="bestMeAMModel.FK_VoucherDetails_Voucher">
             <End Role="Voucher" EntitySet="Vouchers" />
             <End Role="VoucherDetail" EntitySet="VoucherDetails" />
           </AssociationSet>
+          <EntitySet Name="invoiceDetails" EntityType="bestMeAMModel.invoiceDetail" />
+          <EntitySet Name="invoiceMasters" EntityType="bestMeAMModel.invoiceMaster" />
+          <EntitySet Name="Logins" EntityType="bestMeAMModel.Login" />
+          <AssociationSet Name="FK_invoiceDetails_invoiceMaster" Association="bestMeAMModel.FK_invoiceDetails_invoiceMaster">
+            <End Role="invoiceMaster" EntitySet="invoiceMasters" />
+            <End Role="invoiceDetail" EntitySet="invoiceDetails" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Voucher">
+          <Key>
+            <PropertyRef Name="voucherNo" />
+          </Key>
+          <Property Name="voucherNo" Type="Int32" Nullable="false" />
+          <Property Name="voucherDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="voucherType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="VoucherDetails" Relationship="bestMeAMModel.FK_VoucherDetails_Voucher" FromRole="Voucher" ToRole="VoucherDetail" />
+        </EntityType>
+        <EntityType Name="VoucherDetail">
+          <Key>
+            <PropertyRef Name="code" />
+          </Key>
+          <Property Name="code" Type="Int32" Nullable="false" />
+          <Property Name="voucherNo" Type="Int32" Nullable="false" />
+          <Property Name="accountNo" Type="Int32" Nullable="false" />
+          <Property Name="accountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="debit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="credit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="Voucher" Relationship="bestMeAMModel.FK_VoucherDetails_Voucher" FromRole="VoucherDetail" ToRole="Voucher" />
+        </EntityType>
+        <Association Name="FK_VoucherDetails_Voucher">
+          <End Type="bestMeAMModel.Voucher" Role="Voucher" Multiplicity="1" />
+          <End Type="bestMeAMModel.VoucherDetail" Role="VoucherDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Voucher">
+              <PropertyRef Name="voucherNo" />
+            </Principal>
+            <Dependent Role="VoucherDetail">
+              <PropertyRef Name="voucherNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="invoiceDetail">
           <Key>
             <PropertyRef Name="code" />
@@ -185,29 +229,15 @@
           <Property Name="companyCode" Type="Int32" Nullable="false" />
           <Property Name="companyName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="saleVoucherNo" Type="Int32" Nullable="false" />
+          <Property Name="containers" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="invoiceDetails" Relationship="bestMeAMModel.FK_invoiceDetails_invoiceMaster" FromRole="invoiceMaster" ToRole="invoiceDetail" />
         </EntityType>
-        <EntityType Name="Voucher">
+        <EntityType Name="Login">
           <Key>
-            <PropertyRef Name="voucherNo" />
+            <PropertyRef Name="userName" />
           </Key>
-          <Property Name="voucherNo" Type="Int32" Nullable="false" />
-          <Property Name="voucherDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="voucherType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="VoucherDetails" Relationship="bestMeAMModel.FK_VoucherDetails_Voucher" FromRole="Voucher" ToRole="VoucherDetail" />
-        </EntityType>
-        <EntityType Name="VoucherDetail">
-          <Key>
-            <PropertyRef Name="code" />
-          </Key>
-          <Property Name="code" Type="Int32" Nullable="false" />
-          <Property Name="voucherNo" Type="Int32" Nullable="false" />
-          <Property Name="accountNo" Type="Int32" Nullable="false" />
-          <Property Name="accountName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="debit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="credit" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <NavigationProperty Name="Voucher" Relationship="bestMeAMModel.FK_VoucherDetails_Voucher" FromRole="VoucherDetail" ToRole="Voucher" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_invoiceDetails_invoiceMaster">
           <End Type="bestMeAMModel.invoiceMaster" Role="invoiceMaster" Multiplicity="1" />
@@ -218,18 +248,6 @@
             </Principal>
             <Dependent Role="invoiceDetail">
               <PropertyRef Name="invoiceNo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_VoucherDetails_Voucher">
-          <End Type="bestMeAMModel.Voucher" Role="Voucher" Multiplicity="1" />
-          <End Type="bestMeAMModel.VoucherDetail" Role="VoucherDetail" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Voucher">
-              <PropertyRef Name="voucherNo" />
-            </Principal>
-            <Dependent Role="VoucherDetail">
-              <PropertyRef Name="voucherNo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -267,32 +285,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="invoiceDetails">
-            <EntityTypeMapping TypeName="bestMeAMModel.invoiceDetail">
-              <MappingFragment StoreEntitySet="invoiceDetail">
-                <ScalarProperty Name="amount___" ColumnName="amount($)" />
-                <ScalarProperty Name="rate_Ton___" ColumnName="rate/Ton($)" />
-                <ScalarProperty Name="weight_Ton" ColumnName="weight/Ton" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="containerNo" ColumnName="containerNo" />
-                <ScalarProperty Name="comodity" ColumnName="comodity" />
-                <ScalarProperty Name="Sr_No" ColumnName="Sr_No" />
-                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
-                <ScalarProperty Name="code" ColumnName="code" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="invoiceMasters">
-            <EntityTypeMapping TypeName="bestMeAMModel.invoiceMaster">
-              <MappingFragment StoreEntitySet="invoiceMaster">
-                <ScalarProperty Name="saleVoucherNo" ColumnName="saleVoucherNo" />
-                <ScalarProperty Name="companyName" ColumnName="companyName" />
-                <ScalarProperty Name="companyCode" ColumnName="companyCode" />
-                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
-                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Vouchers">
             <EntityTypeMapping TypeName="bestMeAMModel.Voucher">
               <MappingFragment StoreEntitySet="Voucher">
@@ -312,6 +304,41 @@
                 <ScalarProperty Name="accountNo" ColumnName="accountNo" />
                 <ScalarProperty Name="voucherNo" ColumnName="voucherNo" />
                 <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoiceDetails">
+            <EntityTypeMapping TypeName="bestMeAMModel.invoiceDetail">
+              <MappingFragment StoreEntitySet="invoiceDetail">
+                <ScalarProperty Name="amount___" ColumnName="amount($)" />
+                <ScalarProperty Name="rate_Ton___" ColumnName="rate/Ton($)" />
+                <ScalarProperty Name="weight_Ton" ColumnName="weight/Ton" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="containerNo" ColumnName="containerNo" />
+                <ScalarProperty Name="comodity" ColumnName="comodity" />
+                <ScalarProperty Name="Sr_No" ColumnName="Sr_No" />
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+                <ScalarProperty Name="code" ColumnName="code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invoiceMasters">
+            <EntityTypeMapping TypeName="bestMeAMModel.invoiceMaster">
+              <MappingFragment StoreEntitySet="invoiceMaster">
+                <ScalarProperty Name="containers" ColumnName="containers" />
+                <ScalarProperty Name="saleVoucherNo" ColumnName="saleVoucherNo" />
+                <ScalarProperty Name="companyName" ColumnName="companyName" />
+                <ScalarProperty Name="companyCode" ColumnName="companyCode" />
+                <ScalarProperty Name="invoiceDate" ColumnName="invoiceDate" />
+                <ScalarProperty Name="invoiceNo" ColumnName="invoiceNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="bestMeAMModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
