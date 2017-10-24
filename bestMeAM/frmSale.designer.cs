@@ -749,7 +749,6 @@
             this.Name = "frmSale";
             this.Padding = new System.Windows.Forms.Padding(30, 88, 30, 30);
             this.Text = "Sale";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grpMaster.ResumeLayout(false);
             this.grpMaster.PerformLayout();
             this.groupBox1.ResumeLayout(false);

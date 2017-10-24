@@ -86,7 +86,7 @@ namespace bestMeAM
             List<ledger> item = data.OrderBy(i => i.voucherDate).Select(r =>
             {
                 currentTot += (r.debit - r.credit);
-                return new ledger { voucherDate = Convert.ToDateTime(String.Format("{0:dd/MM/yyyy}", r.voucherDate)), voucherNo = r.voucherNo, debit = r.debit, credit = r.credit, Description = r.Description, balance = currentTot };
+                return new ledger { voucherDate = r.voucherDate, voucherNo = r.voucherNo, debit = r.debit, credit = r.credit, Description = r.Description, balance = currentTot };
             }).ToList();
             dgvDetails.DataSource = item;
             btnPrint.Enabled = true;

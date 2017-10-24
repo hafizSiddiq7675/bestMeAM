@@ -32,22 +32,22 @@
             this.label1 = new System.Windows.Forms.Label();
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.tCompanyReg = new MetroFramework.Controls.MetroTile();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
-            this.tInvoice = new MetroFramework.Controls.MetroTile();
-            this.tAllSales = new MetroFramework.Controls.MetroTile();
-            this.tVouchers = new MetroFramework.Controls.MetroTile();
-            this.tAccounts = new MetroFramework.Controls.MetroTile();
-            this.tAllVouchers = new MetroFramework.Controls.MetroTile();
-            this.tLedger = new MetroFramework.Controls.MetroTile();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.tAllSales = new MetroFramework.Controls.MetroTile();
+            this.tInvoice = new MetroFramework.Controls.MetroTile();
+            this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tAccounts = new MetroFramework.Controls.MetroTile();
+            this.metroTabPage4 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tAllVouchers = new MetroFramework.Controls.MetroTile();
+            this.tVouchers = new MetroFramework.Controls.MetroTile();
+            this.metroTabPage5 = new MetroFramework.Controls.MetroTabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tLedger = new MetroFramework.Controls.MetroTile();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,15 +61,15 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.metroTabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.metroTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.metroTabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -109,7 +109,7 @@
             this.metroTabPage1.Controls.Add(this.tCompanyReg);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
+            this.metroTabPage1.HorizontalScrollbarSize = 7;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
             this.metroTabPage1.Size = new System.Drawing.Size(541, 309);
@@ -117,7 +117,17 @@
             this.metroTabPage1.Text = "Company";
             this.metroTabPage1.VerticalScrollbarBarColor = true;
             this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
+            this.metroTabPage1.VerticalScrollbarSize = 7;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(383, 19);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(155, 112);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
             // 
             // tCompanyReg
             // 
@@ -137,7 +147,7 @@
             this.metroTabPage2.Controls.Add(this.tInvoice);
             this.metroTabPage2.HorizontalScrollbarBarColor = true;
             this.metroTabPage2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.HorizontalScrollbarSize = 10;
+            this.metroTabPage2.HorizontalScrollbarSize = 7;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
             this.metroTabPage2.Size = new System.Drawing.Size(541, 309);
@@ -145,67 +155,17 @@
             this.metroTabPage2.Text = "Sales";
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage2.VerticalScrollbarSize = 10;
+            this.metroTabPage2.VerticalScrollbarSize = 7;
             // 
-            // metroTabPage3
+            // pictureBox4
             // 
-            this.metroTabPage3.Controls.Add(this.pictureBox3);
-            this.metroTabPage3.Controls.Add(this.tAccounts);
-            this.metroTabPage3.HorizontalScrollbarBarColor = true;
-            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.HorizontalScrollbarSize = 10;
-            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage3.Name = "metroTabPage3";
-            this.metroTabPage3.Size = new System.Drawing.Size(541, 309);
-            this.metroTabPage3.TabIndex = 4;
-            this.metroTabPage3.Text = "Accounts";
-            this.metroTabPage3.VerticalScrollbarBarColor = true;
-            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage3.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage4
-            // 
-            this.metroTabPage4.Controls.Add(this.pictureBox2);
-            this.metroTabPage4.Controls.Add(this.tAllVouchers);
-            this.metroTabPage4.Controls.Add(this.tVouchers);
-            this.metroTabPage4.HorizontalScrollbarBarColor = true;
-            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.HorizontalScrollbarSize = 10;
-            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage4.Name = "metroTabPage4";
-            this.metroTabPage4.Size = new System.Drawing.Size(541, 309);
-            this.metroTabPage4.TabIndex = 5;
-            this.metroTabPage4.Text = "Vouchers";
-            this.metroTabPage4.VerticalScrollbarBarColor = true;
-            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage4.VerticalScrollbarSize = 10;
-            // 
-            // metroTabPage5
-            // 
-            this.metroTabPage5.Controls.Add(this.pictureBox1);
-            this.metroTabPage5.Controls.Add(this.tLedger);
-            this.metroTabPage5.HorizontalScrollbarBarColor = true;
-            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.HorizontalScrollbarSize = 10;
-            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage5.Name = "metroTabPage5";
-            this.metroTabPage5.Size = new System.Drawing.Size(541, 309);
-            this.metroTabPage5.TabIndex = 6;
-            this.metroTabPage5.Text = "Reports";
-            this.metroTabPage5.VerticalScrollbarBarColor = true;
-            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage5.VerticalScrollbarSize = 10;
-            // 
-            // tInvoice
-            // 
-            this.tInvoice.ActiveControl = null;
-            this.tInvoice.Location = new System.Drawing.Point(3, 18);
-            this.tInvoice.Name = "tInvoice";
-            this.tInvoice.Size = new System.Drawing.Size(231, 112);
-            this.tInvoice.TabIndex = 3;
-            this.tInvoice.Text = "Record Invoices";
-            this.tInvoice.UseSelectable = true;
-            this.tInvoice.Click += new System.EventHandler(this.tInvoice_Click);
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(383, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(155, 112);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 5;
+            this.pictureBox4.TabStop = false;
             // 
             // tAllSales
             // 
@@ -218,16 +178,42 @@
             this.tAllSales.UseSelectable = true;
             this.tAllSales.Click += new System.EventHandler(this.tAllSales_Click);
             // 
-            // tVouchers
+            // tInvoice
             // 
-            this.tVouchers.ActiveControl = null;
-            this.tVouchers.Location = new System.Drawing.Point(3, 20);
-            this.tVouchers.Name = "tVouchers";
-            this.tVouchers.Size = new System.Drawing.Size(231, 112);
-            this.tVouchers.TabIndex = 3;
-            this.tVouchers.Text = "Voucher Entry";
-            this.tVouchers.UseSelectable = true;
-            this.tVouchers.Click += new System.EventHandler(this.tVouchers_Click);
+            this.tInvoice.ActiveControl = null;
+            this.tInvoice.Location = new System.Drawing.Point(3, 18);
+            this.tInvoice.Name = "tInvoice";
+            this.tInvoice.Size = new System.Drawing.Size(231, 112);
+            this.tInvoice.TabIndex = 3;
+            this.tInvoice.Text = "Record Invoices";
+            this.tInvoice.UseSelectable = true;
+            this.tInvoice.Click += new System.EventHandler(this.tInvoice_Click);
+            // 
+            // metroTabPage3
+            // 
+            this.metroTabPage3.Controls.Add(this.pictureBox3);
+            this.metroTabPage3.Controls.Add(this.tAccounts);
+            this.metroTabPage3.HorizontalScrollbarBarColor = true;
+            this.metroTabPage3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.HorizontalScrollbarSize = 7;
+            this.metroTabPage3.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage3.Name = "metroTabPage3";
+            this.metroTabPage3.Size = new System.Drawing.Size(541, 309);
+            this.metroTabPage3.TabIndex = 4;
+            this.metroTabPage3.Text = "Accounts";
+            this.metroTabPage3.VerticalScrollbarBarColor = true;
+            this.metroTabPage3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage3.VerticalScrollbarSize = 7;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(383, 17);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(155, 112);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 5;
+            this.pictureBox3.TabStop = false;
             // 
             // tAccounts
             // 
@@ -240,37 +226,22 @@
             this.tAccounts.UseSelectable = true;
             this.tAccounts.Click += new System.EventHandler(this.tAccounts_Click);
             // 
-            // tAllVouchers
+            // metroTabPage4
             // 
-            this.tAllVouchers.ActiveControl = null;
-            this.tAllVouchers.Location = new System.Drawing.Point(3, 147);
-            this.tAllVouchers.Name = "tAllVouchers";
-            this.tAllVouchers.Size = new System.Drawing.Size(231, 112);
-            this.tAllVouchers.TabIndex = 3;
-            this.tAllVouchers.Text = "All Vouchers";
-            this.tAllVouchers.UseSelectable = true;
-            this.tAllVouchers.Click += new System.EventHandler(this.tAllVouchers_Click);
-            // 
-            // tLedger
-            // 
-            this.tLedger.ActiveControl = null;
-            this.tLedger.Location = new System.Drawing.Point(3, 22);
-            this.tLedger.Name = "tLedger";
-            this.tLedger.Size = new System.Drawing.Size(231, 112);
-            this.tLedger.TabIndex = 3;
-            this.tLedger.Text = "Ledger Report";
-            this.tLedger.UseSelectable = true;
-            this.tLedger.Click += new System.EventHandler(this.tLedger_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(383, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 112);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.metroTabPage4.Controls.Add(this.pictureBox2);
+            this.metroTabPage4.Controls.Add(this.tAllVouchers);
+            this.metroTabPage4.Controls.Add(this.tVouchers);
+            this.metroTabPage4.HorizontalScrollbarBarColor = true;
+            this.metroTabPage4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.HorizontalScrollbarSize = 7;
+            this.metroTabPage4.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage4.Name = "metroTabPage4";
+            this.metroTabPage4.Size = new System.Drawing.Size(541, 309);
+            this.metroTabPage4.TabIndex = 5;
+            this.metroTabPage4.Text = "Vouchers";
+            this.metroTabPage4.VerticalScrollbarBarColor = true;
+            this.metroTabPage4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage4.VerticalScrollbarSize = 7;
             // 
             // pictureBox2
             // 
@@ -282,35 +253,64 @@
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // tAllVouchers
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(383, 17);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(155, 112);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 5;
-            this.pictureBox3.TabStop = false;
+            this.tAllVouchers.ActiveControl = null;
+            this.tAllVouchers.Location = new System.Drawing.Point(3, 147);
+            this.tAllVouchers.Name = "tAllVouchers";
+            this.tAllVouchers.Size = new System.Drawing.Size(231, 112);
+            this.tAllVouchers.TabIndex = 3;
+            this.tAllVouchers.Text = "All Vouchers";
+            this.tAllVouchers.UseSelectable = true;
+            this.tAllVouchers.Click += new System.EventHandler(this.tAllVouchers_Click);
             // 
-            // pictureBox4
+            // tVouchers
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(383, 18);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(155, 112);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.tVouchers.ActiveControl = null;
+            this.tVouchers.Location = new System.Drawing.Point(3, 20);
+            this.tVouchers.Name = "tVouchers";
+            this.tVouchers.Size = new System.Drawing.Size(231, 112);
+            this.tVouchers.TabIndex = 3;
+            this.tVouchers.Text = "Voucher Entry";
+            this.tVouchers.UseSelectable = true;
+            this.tVouchers.Click += new System.EventHandler(this.tVouchers_Click);
             // 
-            // pictureBox5
+            // metroTabPage5
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(383, 19);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(155, 112);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 5;
-            this.pictureBox5.TabStop = false;
+            this.metroTabPage5.Controls.Add(this.pictureBox1);
+            this.metroTabPage5.Controls.Add(this.tLedger);
+            this.metroTabPage5.HorizontalScrollbarBarColor = true;
+            this.metroTabPage5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.HorizontalScrollbarSize = 7;
+            this.metroTabPage5.Location = new System.Drawing.Point(4, 38);
+            this.metroTabPage5.Name = "metroTabPage5";
+            this.metroTabPage5.Size = new System.Drawing.Size(541, 309);
+            this.metroTabPage5.TabIndex = 6;
+            this.metroTabPage5.Text = "Reports";
+            this.metroTabPage5.VerticalScrollbarBarColor = true;
+            this.metroTabPage5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPage5.VerticalScrollbarSize = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(383, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // tLedger
+            // 
+            this.tLedger.ActiveControl = null;
+            this.tLedger.Location = new System.Drawing.Point(3, 22);
+            this.tLedger.Name = "tLedger";
+            this.tLedger.Size = new System.Drawing.Size(231, 112);
+            this.tLedger.TabIndex = 3;
+            this.tLedger.Text = "Ledger Report";
+            this.tLedger.UseSelectable = true;
+            this.tLedger.Click += new System.EventHandler(this.tLedger_Click);
             // 
             // pictureBox6
             // 
@@ -445,19 +445,18 @@
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(30, 88, 30, 29);
             this.Text = "Welcome";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.metroTabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.metroTabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.metroTabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();

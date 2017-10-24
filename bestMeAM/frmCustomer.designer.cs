@@ -43,16 +43,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new MetroFramework.Controls.MetroButton();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-            this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.txtAddress = new MetroFramework.Controls.MetroTextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.creditLimit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
+            this.txtAddress = new MetroFramework.Controls.MetroTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -364,6 +364,48 @@
             this.dgvCustomer.TabIndex = 0;
             this.dgvCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellClick);
             // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // contact
+            // 
+            this.contact.DataPropertyName = "contact";
+            this.contact.HeaderText = "Contact";
+            this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.DataPropertyName = "address";
+            this.address.HeaderText = "Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "Email";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            // 
+            // creditLimit
+            // 
+            this.creditLimit.DataPropertyName = "creditLimit";
+            this.creditLimit.HeaderText = "Credit Limit";
+            this.creditLimit.Name = "creditLimit";
+            this.creditLimit.ReadOnly = true;
+            // 
             // txtSearch
             // 
             // 
@@ -456,48 +498,6 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Address";
             // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // contact
-            // 
-            this.contact.DataPropertyName = "contact";
-            this.contact.HeaderText = "Contact";
-            this.contact.Name = "contact";
-            this.contact.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.DataPropertyName = "address";
-            this.address.HeaderText = "Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "Email";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            // 
-            // creditLimit
-            // 
-            this.creditLimit.DataPropertyName = "creditLimit";
-            this.creditLimit.HeaderText = "Credit Limit";
-            this.creditLimit.Name = "creditLimit";
-            this.creditLimit.ReadOnly = true;
-            // 
             // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -527,7 +527,6 @@
             this.Name = "frmCustomer";
             this.Padding = new System.Windows.Forms.Padding(34, 97, 34, 33);
             this.Text = "Company Registration";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

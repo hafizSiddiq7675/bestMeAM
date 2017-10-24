@@ -41,23 +41,23 @@
             this.btnCr = new MetroFramework.Controls.MetroButton();
             this.btnDr = new MetroFramework.Controls.MetroButton();
             this.txtDesc = new MetroFramework.Controls.MetroTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.txtAmt = new MetroFramework.Controls.MetroTextBox();
             this.lblSearch = new System.Windows.Forms.Label();
             this.dgvDetails = new System.Windows.Forms.DataGridView();
-            this.btnPrint = new MetroFramework.Controls.MetroButton();
-            this.btnDelete = new MetroFramework.Controls.MetroButton();
-            this.btnSave = new MetroFramework.Controls.MetroButton();
-            this.lblDr = new System.Windows.Forms.Label();
-            this.lblCr = new System.Windows.Forms.Label();
             this.accountNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.debit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnPrint = new MetroFramework.Controls.MetroButton();
+            this.btnDelete = new MetroFramework.Controls.MetroButton();
+            this.btnSave = new MetroFramework.Controls.MetroButton();
+            this.lblDr = new System.Windows.Forms.Label();
+            this.lblCr = new System.Windows.Forms.Label();
             this.grpMaster.SuspendLayout();
             this.grpDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
@@ -270,6 +270,17 @@
             this.txtDesc.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDesc.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 24);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(60, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Account";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -358,6 +369,50 @@
             this.dgvDetails.TabStop = false;
             this.dgvDetails.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetails_CellClick);
             // 
+            // accountNo
+            // 
+            this.accountNo.DataPropertyName = "accountNo";
+            this.accountNo.HeaderText = "Account No";
+            this.accountNo.Name = "accountNo";
+            this.accountNo.ReadOnly = true;
+            this.accountNo.Visible = false;
+            // 
+            // accountName
+            // 
+            this.accountName.DataPropertyName = "accountName";
+            this.accountName.HeaderText = "Account Name";
+            this.accountName.Name = "accountName";
+            this.accountName.ReadOnly = true;
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "Description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.ReadOnly = true;
+            // 
+            // debit
+            // 
+            this.debit.DataPropertyName = "debit";
+            this.debit.HeaderText = "Debit";
+            this.debit.Name = "debit";
+            this.debit.ReadOnly = true;
+            // 
+            // credit
+            // 
+            this.credit.DataPropertyName = "credit";
+            this.credit.HeaderText = "Credit";
+            this.credit.Name = "credit";
+            this.credit.ReadOnly = true;
+            // 
+            // code
+            // 
+            this.code.DataPropertyName = "code";
+            this.code.HeaderText = "Code";
+            this.code.Name = "code";
+            this.code.ReadOnly = true;
+            this.code.Visible = false;
+            // 
             // btnPrint
             // 
             this.btnPrint.Enabled = false;
@@ -416,61 +471,6 @@
             this.lblCr.Size = new System.Drawing.Size(0, 21);
             this.lblCr.TabIndex = 11;
             // 
-            // accountNo
-            // 
-            this.accountNo.DataPropertyName = "accountNo";
-            this.accountNo.HeaderText = "Account No";
-            this.accountNo.Name = "accountNo";
-            this.accountNo.ReadOnly = true;
-            this.accountNo.Visible = false;
-            // 
-            // accountName
-            // 
-            this.accountName.DataPropertyName = "accountName";
-            this.accountName.HeaderText = "Account Name";
-            this.accountName.Name = "accountName";
-            this.accountName.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.DataPropertyName = "Description";
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
-            // 
-            // debit
-            // 
-            this.debit.DataPropertyName = "debit";
-            this.debit.HeaderText = "Debit";
-            this.debit.Name = "debit";
-            this.debit.ReadOnly = true;
-            // 
-            // credit
-            // 
-            this.credit.DataPropertyName = "credit";
-            this.credit.HeaderText = "Credit";
-            this.credit.Name = "credit";
-            this.credit.ReadOnly = true;
-            // 
-            // code
-            // 
-            this.code.DataPropertyName = "code";
-            this.code.HeaderText = "Code";
-            this.code.Name = "code";
-            this.code.ReadOnly = true;
-            this.code.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 24);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Account";
-            // 
             // frmVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -491,7 +491,6 @@
             this.Name = "frmVoucher";
             this.Padding = new System.Windows.Forms.Padding(30, 88, 30, 29);
             this.Text = "Voucher Entry";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.grpMaster.ResumeLayout(false);
             this.grpMaster.PerformLayout();
             this.grpDetails.ResumeLayout(false);

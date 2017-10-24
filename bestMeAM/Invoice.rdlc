@@ -320,9 +320,10 @@
         <Source>Embedded</Source>
         <Value>LFNEW</Value>
         <Sizing>FitProportional</Sizing>
-        <Left>0.22568in</Left>
+        <Top>0.26264in</Top>
+        <Left>0.38177in</Left>
         <Height>1.3777in</Height>
-        <Width>1.48139in</Width>
+        <Width>1.33919in</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -351,7 +352,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>2.36197in</Left>
+        <Top>0.29042in</Top>
+        <Left>2.38975in</Left>
         <Height>0.38195in</Height>
         <Width>2.78125in</Width>
         <ZIndex>10</ZIndex>
@@ -386,8 +388,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.40973in</Top>
-        <Left>2.36197in</Left>
+        <Top>0.70015in</Top>
+        <Left>2.38975in</Left>
         <Height>0.34028in</Height>
         <Width>2.78125in</Width>
         <ZIndex>11</ZIndex>
@@ -421,8 +423,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.74701in</Top>
-        <Left>1.70707in</Left>
+        <Top>1.03743in</Top>
+        <Left>1.73485in</Left>
         <Height>0.28694in</Height>
         <Width>4.21528in</Width>
         <ZIndex>12</ZIndex>
@@ -464,8 +466,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.02306in</Top>
-        <Left>5.14321in</Left>
+        <Top>0.53868in</Top>
+        <Left>5.88332in</Left>
         <Height>0.23958in</Height>
         <Width>1.88046in</Width>
         <ZIndex>13</ZIndex>
@@ -505,8 +507,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.26264in</Top>
-        <Left>5.171in</Left>
+        <Top>0.77826in</Top>
+        <Left>5.91111in</Left>
         <Height>0.24528in</Height>
         <Width>2.35889in</Width>
         <ZIndex>14</ZIndex>

@@ -47,7 +47,6 @@
             this.chkIsGroup = new System.Windows.Forms.CheckBox();
             this.btnDelete = new MetroFramework.Controls.MetroButton();
             this.dgvAccounts = new System.Windows.Forms.DataGridView();
-            this.txtAccSearch = new MetroFramework.Controls.MetroTextBox();
             this.accountType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +54,7 @@
             this.parentCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openingDebit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.openingCredit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtAccSearch = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).BeginInit();
             this.SuspendLayout();
             // 
@@ -391,42 +391,6 @@
             this.dgvAccounts.TabIndex = 21;
             this.dgvAccounts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellClick);
             // 
-            // txtAccSearch
-            // 
-            // 
-            // 
-            // 
-            this.txtAccSearch.CustomButton.Image = null;
-            this.txtAccSearch.CustomButton.Location = new System.Drawing.Point(287, 2);
-            this.txtAccSearch.CustomButton.Margin = new System.Windows.Forms.Padding(5);
-            this.txtAccSearch.CustomButton.Name = "";
-            this.txtAccSearch.CustomButton.Size = new System.Drawing.Size(25, 25);
-            this.txtAccSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtAccSearch.CustomButton.TabIndex = 1;
-            this.txtAccSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtAccSearch.CustomButton.UseSelectable = true;
-            this.txtAccSearch.CustomButton.Visible = false;
-            this.txtAccSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.txtAccSearch.Lines = new string[0];
-            this.txtAccSearch.Location = new System.Drawing.Point(948, 101);
-            this.txtAccSearch.Margin = new System.Windows.Forms.Padding(5);
-            this.txtAccSearch.MaxLength = 32767;
-            this.txtAccSearch.Name = "txtAccSearch";
-            this.txtAccSearch.PasswordChar = '\0';
-            this.txtAccSearch.PromptText = "Search Here..";
-            this.txtAccSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtAccSearch.SelectedText = "";
-            this.txtAccSearch.SelectionLength = 0;
-            this.txtAccSearch.SelectionStart = 0;
-            this.txtAccSearch.ShortcutsEnabled = true;
-            this.txtAccSearch.Size = new System.Drawing.Size(315, 30);
-            this.txtAccSearch.TabIndex = 22;
-            this.txtAccSearch.UseSelectable = true;
-            this.txtAccSearch.WaterMark = "Search Here..";
-            this.txtAccSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtAccSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtAccSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAccSearch_KeyUp);
-            // 
             // accountType
             // 
             this.accountType.DataPropertyName = "accountType";
@@ -476,6 +440,42 @@
             this.openingCredit.Name = "openingCredit";
             this.openingCredit.ReadOnly = true;
             // 
+            // txtAccSearch
+            // 
+            // 
+            // 
+            // 
+            this.txtAccSearch.CustomButton.Image = null;
+            this.txtAccSearch.CustomButton.Location = new System.Drawing.Point(287, 2);
+            this.txtAccSearch.CustomButton.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAccSearch.CustomButton.Name = "";
+            this.txtAccSearch.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.txtAccSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtAccSearch.CustomButton.TabIndex = 1;
+            this.txtAccSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtAccSearch.CustomButton.UseSelectable = true;
+            this.txtAccSearch.CustomButton.Visible = false;
+            this.txtAccSearch.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtAccSearch.Lines = new string[0];
+            this.txtAccSearch.Location = new System.Drawing.Point(948, 101);
+            this.txtAccSearch.Margin = new System.Windows.Forms.Padding(5);
+            this.txtAccSearch.MaxLength = 32767;
+            this.txtAccSearch.Name = "txtAccSearch";
+            this.txtAccSearch.PasswordChar = '\0';
+            this.txtAccSearch.PromptText = "Search Here..";
+            this.txtAccSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtAccSearch.SelectedText = "";
+            this.txtAccSearch.SelectionLength = 0;
+            this.txtAccSearch.SelectionStart = 0;
+            this.txtAccSearch.ShortcutsEnabled = true;
+            this.txtAccSearch.Size = new System.Drawing.Size(315, 30);
+            this.txtAccSearch.TabIndex = 22;
+            this.txtAccSearch.UseSelectable = true;
+            this.txtAccSearch.WaterMark = "Search Here..";
+            this.txtAccSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtAccSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAccSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAccSearch_KeyUp);
+            // 
             // frmChartofAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -506,7 +506,6 @@
             this.Name = "frmChartofAcc";
             this.Padding = new System.Windows.Forms.Padding(30, 88, 30, 30);
             this.Text = "Chart OF Accounts";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.dgvAccounts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -23,7 +23,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Left>2.40719in</Left>
+        <Top>0.53907in</Top>
+        <Left>2.35622in</Left>
         <Height>0.38195in</Height>
         <Width>2.78125in</Width>
         <Style>
@@ -41,9 +42,10 @@
         <Source>Embedded</Source>
         <Value>LFNEW</Value>
         <Sizing>FitProportional</Sizing>
-        <Left>0.14007in</Left>
+        <Top>0.48958in</Top>
+        <Left>0.30255in</Left>
         <Height>1.3777in</Height>
-        <Width>1.48139in</Width>
+        <Width>1.38835in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -77,8 +79,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.05593in</Top>
-        <Left>5.37993in</Left>
+        <Top>0.6957in</Top>
+        <Left>5.90714in</Left>
         <Height>0.23611in</Height>
         <Width>2.13542in</Width>
         <ZIndex>2</ZIndex>
@@ -118,8 +120,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox5</rd:DefaultName>
-        <Top>0.31982in</Top>
-        <Left>5.37993in</Left>
+        <Top>0.95959in</Top>
+        <Left>5.90714in</Left>
         <Height>0.25569in</Height>
         <Width>2.33333in</Width>
         <ZIndex>3</ZIndex>
@@ -153,8 +155,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.3806in</Top>
-        <Left>2.39678in</Left>
+        <Top>0.91967in</Top>
+        <Left>2.34581in</Left>
         <Height>0.34028in</Height>
         <Width>2.78125in</Width>
         <ZIndex>4</ZIndex>
@@ -188,8 +190,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox3</rd:DefaultName>
-        <Top>0.71788in</Top>
-        <Left>1.74187in</Left>
+        <Top>1.25695in</Top>
+        <Left>1.6909in</Left>
         <Height>0.28694in</Height>
         <Width>4.21528in</Width>
         <ZIndex>5</ZIndex>
@@ -765,7 +767,7 @@
         <Top>2.37722in</Top>
         <Left>0.30255in</Left>
         <Height>0.67708in</Height>
-        <Width>7.93792in</Width>
+        <Width>7.93793in</Width>
         <ZIndex>7</ZIndex>
         <Style>
           <Border>
@@ -812,7 +814,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>=Sum(Fields!balance.Value, "bestMeAM")</Value>
+                <Value>=Last(Fields!balance.Value, "bestMeAM")</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -822,7 +824,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox23</rd:DefaultName>
-        <Top>3.05431in</Top>
+        <Top>3.0543in</Top>
         <Left>7.09881in</Left>
         <Height>0.35417in</Height>
         <Width>1.14166in</Width>
